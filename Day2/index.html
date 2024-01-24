@@ -1,0 +1,187 @@
+<!-- html:5 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JS code 
+
+        console.log(1)
+
+        // NUMBER DATATYPE
+        console.log(typeof(2.2))
+
+        console.log(typeof(2))
+
+        console.log(typeof(0.0002344556))
+
+        console.log(typeof(0.0002344556787989))
+
+        console.log(typeof(100000000))
+
+        console.log(typeof(1000000680))
+
+        console.log(typeof(6789))
+        
+        console.log(typeof(2.2))
+
+        //=>comments
+        // shortcut key=>crtl+/
+        // string
+        // >""
+
+        console.log(typeof("Hey Hi everyone"))
+
+        console.log(2)//number
+        console.log("2")//string
+        console.log(typeof("2+2"))
+        console.log(2+2)
+
+        // challenge
+        "2"//string
+        // calcualation
+        console.log("2"+"2")// no cal string+string=string
+        console.log("2+2") // no cal 2+2
+        // s+s=s
+        // s+n=s
+        //n+s=s
+        //n+n+s=s
+
+        console.log(2+"fifty") 
+        //concatenation
+        // operation> addition
+        console.log("hello"+2+"hi")
+        console.log(2+2+5+"string")//9string
+        console.log(typeof(2+2+5+"string"))
+        console.log("2.2"+"2.2")//s+s=>concatenation 2.22.2
+
+        // 2+2+"dfg"
+        // '4dfg'
+        // 2+"abc"+56
+        // '2abc56'
+        // 2+2
+        // 4
+        // 2+2+"opop"
+        // '4opop'
+        // "10"+10+"10"
+        // '101010'
+        // typeof('101010')
+        // 'string'
+
+        //parseInt Method> converting  str to int
+        console.log(typeof("2"))
+        // ()
+        // parseInt()
+        console.log(typeof(parseInt("2.90909")))
+        console.log(parseInt("2.90909")+parseInt("2"))//4
+
+        console.log(parseInt("2A"))
+        console.log(parseInt("A2A"))//NAN
+        console.log(parseInt("2 2A"))
+
+        // codekata
+
+        var userInput=['1','2','3','4']
+        for(var i=0;i<userInput.length;i++){
+            console.log(parseInt(userInput[i])+2)
+        }
+
+        console.log(parseFloat("2.909099999999")+parseInt("2"))//4.90...
+        console.log(typeof(parseFloat("2.22")+parseFloat("2.22")))
+
+
+        // boolean
+        // true/false
+        console.log(true)
+        console.log(typeof(true))
+        console.log(typeof("true"))
+
+        console.log(false)
+        console.log(typeof(false))
+        console.log(typeof("false"))
+
+        // if(true){
+        //     console.log(2+2)
+        // }
+
+        // Composite 
+        // array
+        var arr=[11,22,33,"guvi","geek",true,false]
+        //11=> 0 index
+        //11=>1 element`
+        //1st element is placed 0th position
+        console.log(arr)
+        console.log(arr[0])
+        console.log(arr[6])
+        // length property
+        console.log(arr.length)
+
+        // property and method
+        // parseInt()
+        // length
+            //inside insert
+            arr[7]="22"
+            console.log(arr)
+
+            arr[8]=45
+            console.log(arr)
+
+            arr[2]=450
+            console.log(arr)
+
+        // if index no exist=> update
+        // if index no doesnt exist=> insert
+
+        // refering a for => arr=> i=0
+
+        for(var i=0;i<arr.length;i++){
+            console.log(i,arr[i])
+        }
+
+        // object:
+        // student=< xyz, 10th , singing
+        // ["xyz","10th","singing"]
+        //alphabetical order
+        var obj={
+            // key : value pair
+            name:"xyz",
+            class:"10th",
+            hobbies:"singing"
+        }
+        console.log(obj)
+        //dot notatation .
+        console.log(obj.class)
+        console.log(obj.hobbies)
+
+        console.log(typeof(obj))//object
+        console.log(typeof(arr))//object
+
+        //insert 
+        obj.phone=78998646
+        console.log(obj)
+        //[] xxxx .
+        obj["landline number"]=34567890098765
+
+        obj['grade score']="B"
+        console.log(obj)
+
+        //update
+        obj.name="abc"
+        console.log(obj)
+
+        //remove
+
+        delete obj.hobbies
+        console.log(obj)
+
+    // 
+        
+    </script>
+</body>
+</html>
+
