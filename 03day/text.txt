@@ -1,0 +1,24 @@
+Introduction to Array
+>>>>>>>>>>>>>>>>>>
+Array and JSON iteration
+>>>>>>>>>>>>>
+
+JSON: 
+JAVASCRIPT OBJECT NOTATION
+
+var obj={
+    key1:"value1",
+    key2:"value2",
+    key3:"value3",
+}
+
+
+API:
+
+Apllication Programming Interface
+client mediator (API) server
+
+
+XMLHttpRequest
+
+Hoisting & scope

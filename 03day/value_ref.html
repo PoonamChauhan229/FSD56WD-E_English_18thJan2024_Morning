@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //copy by value|| call by value
+        var a=5;
+        var b=a;//pure maths b=5
+    
+        console.log(a,b)//5,5
+        a=30
+        // a, b=>
+        //5,5
+        //30,5
+        //30,30
+        console.log(a,b) // 30 5
+
+        //copy by ref
+        //composite datatypes
+        var arr=[1,2,4]
+        var arr1=arr
+        console.log(arr,arr1)
+        arr[2]="guvi"
+        console.log(arr,arr1)
+
+    </script>
+</body>
+</html>
