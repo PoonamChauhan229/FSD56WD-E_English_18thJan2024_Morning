@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>        
+        function abc(){
+            console.log("Function Syntax")
+        }
+        abc()
+        abc()
+
+        for(var i=0;i<10;i++){
+            abc()// invoking 10 times
+        }
+
+        // function with parameter
+
+        function test(a,b,c,name,abc){
+            console.log("Function Syntax with parameter")
+            console.log(a,b,c,name,abc)
+            //a=22
+            //b=45
+            //c=100
+            //name="guvi"
+            //abc=[12,3,4,5]
+            //sum of abc 
+            let sum=0;
+            for(var i=0;i<abc.length;i++){
+                // console.log(abc[i])
+                sum=sum+abc[i]
+            }
+            console.log(sum+a+b+c)
+            console.log("M studying in",name)
+
+        }
+        test(22,45,100,"guvi",[12,3,4,5])//args 
+        test(12,450,1000,"guviGeek",[120,30,40,50])//args
+        
+        console.log(test(12,450,1000,"guviGeek",[120,30,40,50]))//undefined
+        
+        function calculate(x,y){
+            // console.log("Calculate")
+            let res=x+y;
+            // console.log(res)
+            return res;
+        }
+        console.log(calculate(3,5))//8
+        let total=calculate(3,5)
+        console.log(total)
+
+        function display(s){
+            console.log("Total is",s)
+        }
+        display(total)
+
+        //
+
+        function test3(){
+            return 1
+        }
+        console.log(test3())
+
+        // task=>
+        // student=> E+M+S
+        // Total Marks 100+100+100=300
+        // Maks scored=> 90+78+80
+
+        //Percentage=> 
+        // function 1=> total marks || total marks scored => addition
+        // function 2=> display the percentage => % calculation done here
+        // function 3=> display the grades => A B C D FAIL calculation done here
+
+
+        // 11:51=> 12:05
+        // 12:05 => 10 min
+
+        function getTotal(e,m,s){
+            // return total
+            return e+m+s
+        }
+        let totalSum=getTotal(90,78,80)
+
+        function displayPercentage(a,totalMarks){
+            // mo/tm*100
+            let percent=a/totalMarks*100
+            console.log(percent.toFixed(2),"%")
+
+        }
+        displayPercentage(totalSum,300)
+
+        //grading
+        // >60B
+        //>80A
+
+
+    //    Annoymous function
+
+    let compute=function(a,b){
+        console.log(a+b)
+    }
+    compute(3,5)
+
+    //Arrow function
+    // es6
+    let test1=()=>console.log(1+1)
+    test1()
+
+    let test2=()=>1+1
+    console.log(test2())
+
+    // 1 line function using arrow function
+    // ❌❌❌❌
+    //{}
+    //functionname
+    // function
+    //return keyword
+
+    let test4=(a,b)=>{
+        var res=a+b;
+        return res
+    }
+    console.log(test4(1,1))
+
+    
+
+
+    </script>
+</body>
+</html>

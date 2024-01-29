@@ -1,0 +1,75 @@
+Contents:
+var vs let vs const
+Introduction to functions
+function & return keyword
+types of function
+
+keywords> decalre the variable
+var > introduce JS launch
+    > limittaions
+let
+const
+
+
+var a;// string| number|boolean
+let d;// string| number|boolean
+
+var a=100 // number
+var b="guvi"//string
+var c=true //boolean
+var d=[1,2,3,4,5] //array
+var e={name:"guvi",hobby:"dancing"}//object
+= assignment operator
+
+var keyword
+
+_
+File creation/ declaring a variable
+
+var_let_const.html ✅✅✅
+varLetConst.html ✅✅✅
+Var.html ❌❌❌
+var.html✅✅✅
+
+
+var let const keyword
+
+Functions:
+execute/ perform any task again and again > function
+function will be triggered 
+
+function keyword
+functionname() => userdefined
+{
+    // block of code
+}
+
+function functionname(){
+    //block of code
+}
+//trigger/invoke/call
+functionname()
+
+Function with parameter
+
+function functionname(parameter1,parameter2,parameter3){
+    //block of code
+}
+functionname(78,90,100)//values as arguments
+
+function with return keyword
+
+function 1=> addition
+function 2=> display 
+
+
+Annoymous function 
+functionname ❌❌❌
+
+let variable=function(){
+    //block of code
+}
+variable()
+
+
+
