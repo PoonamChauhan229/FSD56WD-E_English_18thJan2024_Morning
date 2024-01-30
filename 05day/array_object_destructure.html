@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[45,78,89,100,400]
+        //access => 78
+        console.log(arr[1])
+        console.log(arr[4])
+        
+        let newarr=["Guvi","Geek",2024,"Javascript"]
+        console.log(newarr[2])
+        console.log(newarr[3])
+
+        //destructuring
+        //unpacking of the items
+
+        let [firstname,lastname,currentyear,learning]=newarr
+        console.log(firstname,lastname,currentyear,learning)
+
+        console.log(` i am ${firstname} ${lastname}, in year ${currentyear} started learning ${learning}`)
+       
+        //destructing of an object
+
+        let obj={
+            name:"guvi",
+            age:27,
+            contactnum:90976767,
+            email:"guvi@gmail.com",
+            place:"Chennai"
+        }
+        console.log(obj)
+        console.log(obj.name)
+        console.log(obj.email)
+
+        let {name,age,contactnum,email,place}=obj
+        console.log(name,age,contactnum,email,place)
+    </script>
+</body>
+</html>

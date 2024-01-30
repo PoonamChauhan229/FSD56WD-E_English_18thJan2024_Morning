@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var let const 
+        var a=20;
+        let b=30;
+        const c=40
+        // global variable
+        {
+            console.log(a,b,c)//20 30 40 
+        }
+
+        {
+            let d=40;
+            console.log(d)//40
+        }
+     //   console.log(d)//erro -not defined
+
+
+
+        {
+            let e=89;
+            console.log(e)//89
+            {
+                let d=90;
+                console.log(d)//90
+                console.log(e)//89
+            }
+             //   console.log(d)//error-not defined
+                console.log(e)//89
+        }
+           // console.log(d)//error
+            //console.log(e)//error
+
+        console.log("CONST")
+            {
+            const e=89;
+            console.log(e)//89
+            {
+                const d=90;
+                console.log(d)//90
+                console.log(e)//89
+            }
+              // console.log(d)//error-not defined
+                console.log(e)//89
+        }
+           //console.log(d)//error
+            //console.log(e)//error
+
+            
+        console.log("VAR")
+            {
+            var e=89;
+            console.log(e)//89
+            {
+                var d=90;
+                console.log(d)//90
+                console.log(e)//89
+            }
+                console.log(d)//90
+                console.log(e)//89
+        }
+           console.log(d)//90
+            console.log(e)//89
+
+            // var functional scope
+
+            function varScope(){
+                var abc=900
+                console.log(abc)
+            }
+            varScope()
+            console.log(abc)//abc is not defined
+    </script>
+</body>
+</html>
