@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Write a “person” class to hold all the details. -->
+    <!-- challenge time :11:20 -->
+
+    <script>
+        class person{
+            constructor(name,age,place){
+                this.name=name,
+                this.age=age,
+                this.place=place
+            }
+        }
+        let newUser=new person("Guvi",25,"Chennai")
+        console.log(newUser)
+
+        console.log(`New User/Person-${newUser.name} with age group of ${newUser.age} Registered Successfully from ${newUser.place} location`)
+
+        // destructuring
+        let{name,age,place}=newUser
+        console.log(`New User/Person-${name} with age group of ${age} Registered Successfully from ${place} location`)
+    </script>
+</body>
+</html>

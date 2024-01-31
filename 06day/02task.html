@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // write a class to calculate uber price.
+        //Challenge: 11:45
+        //10 *3 =30
+        //30*3=90
+        // 100 =>25%=> 25Rs
+        class Uber{
+            constructor(km){
+                this.km=km,
+                this.price=km*3.34
+                console.log(this.km,this.price)
+            }
+            getPrice(){
+                console.log(`Ride cost is ${this.price}`)
+            }
+            //methods 
+            applyDiscount(){
+                console.log("Discount Calculation")
+                let discount=(25/this.price)*100
+                // console.log(discount)
+                let priceAfterDiscount=this.price-discount
+                // console.log(`As a privelge customer , i got an discount and Price After Discount is Rs.${priceAfterDiscount.toFixed()}`)
+                return `As a privelge customer , i got an discount and Price After Discount is Rs.${priceAfterDiscount.toFixed()}`
+
+            }
+        }
+
+        let ride=new Uber(30)
+        ride.getPrice()
+        // ride.applyDiscount()
+        console.log(ride.applyDiscount())
+
+    </script>
+</body>
+</html>

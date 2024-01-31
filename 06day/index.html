@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class car{
+                //constructor
+                //special value of assiging the value in classes      
+                constructor(name,year){
+                    console.log("Constructor")
+                    //about the feautre
+                    this.name=name,
+                    this.year=year
+                    // console.log(this.name,this.year)   
+                    console.log(name)               
+                }  
+                // METHOD
+                getDetails(){
+                    console.log("HI, HELLO FROM GETDETAILS METHOD")
+                    console.log(name)
+                    console.log(this.name)
+                }
+                // create an another method, 
+                // Current car i own is .... and i purchased in a year ....
+                getCarDetails(){
+                   console.log(`Current car i own is ${this.name} and i purchased in a year ${this.year}`) 
+                }       
+        }
+        let s1= new car("Audi",2023)
+        //new keyword
+       console.log(s1)// object
+       console.log(s1.name,s1.year)
+
+        let s2=new car("BMW",2024)//args
+        //constructor will be called always first
+        console.log(s2)
+
+        s2.getDetails()
+        s1.getDetails()
+        s1.getCarDetails()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+OOPS:
+Object Oriented Programming
+
+class
+method
+Object
+
+es6 supports the OOPS concept
+object:
+class:blueprint/template of the object
+methods: communicate betwen the objects
+
+class classname{
+
+}
+//car
+ class car{
+    
+ }
