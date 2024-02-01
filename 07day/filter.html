@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+console.log("FILTER METHOD")
+var arr=[10,20,30,40,3,9,17,45,67]
+// even no , even no 
+//ignoring => odd no
+
+let res8=arr.filter((element,index)=>element%2==0)
+console.log(res8)
+
+//odd no
+//! ignoring even no 
+let res9=arr.filter((element,index)=>element%2!==0)
+console.log(res9)
+
+let words=["guvi","geek","oragnisation","FSD","Javascript","you","i","too"]
+console.log(words[0].length)
+//>3
+//
+let res10=words.filter((element,index)=>element.length>3);
+console.log(res10)
+// array of objects
+let students=[
+    {name:"Bob",marks:50},
+    {name:"Karl",marks:60},
+    {name:"Jack",marks:55},
+    {name:"James",marks:65},
+    {name:"John",marks:80},
+]
+
+// Challenge :05 min
+// map > marks
+// [50,60,55,65,80]
+
+let res11=students.map((element)=>element)
+console.log(res11)
+
+let res12=students.map(({name,marks})=>marks)
+console.log(res12)
+
+// Challenge :05 min
+// filter out those student marks greater than 60.
+// [65,80]
+
+let res13=students.filter(({name,marks})=>marks>60)
+console.log(res13)
+//res13 => get the names
+console.log(res13.map((element)=>element.marks))
+console.log(res13.map((element)=>element.name))
+
+res14=res13.map((element)=>element.name)
+console.log(...res14)//spread operator
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var arr=[10,20,30,40,50]
+
+    var output=[]
+    for(var i=0;i<arr.length;i++){
+        console.log(arr[i])
+        output.push(arr[i])
+    }
+    console.log(output)
+
+    console.log("MAP METHOD")
+    arr.map((element,index)=>console.log(element))
+    let res1=arr.map((element,index)=>element)
+    console.log(res1)
+
+    // * 2 (times 2)
+    //  [20, 40, 60, 80, 100]
+    let res2=arr.map((element)=>element*2)
+    console.log(res2)
+
+    // index 
+    // [10,21,32,43,54] => 
+    //[20,41,62,83,104] => Challenge : 10:50
+    let res3=arr.map((element,index)=>console.log(element,index))
+
+    let res4=arr.map((element,index)=>element+index)
+   console.log(res4)
+
+   let res5=arr.map((element,index)=> element*2+index)
+   console.log(res5)
+
+   //array of object:
+   var arrobj=[
+    {key:1,value:10},
+    {key:2,value:20},
+    {key:3,value:30},
+   ]
+
+   let res6=arrobj.map(({key,value})=> (value*6))
+   console.log(res6)
+
+   let res7=arrobj.map((element=> (element.value)))
+   console.log(res7)
+
+//    [10,20,30]
+// 7 min :11:05 
+
+
+    </script>
+</body>
+</html>

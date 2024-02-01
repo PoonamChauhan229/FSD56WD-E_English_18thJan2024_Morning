@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[1,4,9,16,25,36,49,64,81,100]
+        // sqrt=> even => add 
+        // Challenge 10 min
+        //12:40
+
+        console.log(arr.map((element)=>Math.sqrt(element)).filter((element)=>element%2==0).reduce((acc,cv)=>acc+cv))
+        console.log(arr)
+
+        
+    </script>
+</body>
+</html>

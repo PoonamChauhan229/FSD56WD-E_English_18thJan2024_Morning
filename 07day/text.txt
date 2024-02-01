@@ -1,0 +1,63 @@
+array methods:
+MRF
+MAP 
+REDUCE
+FILTER
+
+Array methods: going to work on array:
+push
+slice
+join
+
+Refernce:
+
+MAP:
+array.methodname()
+var arr=[1,2,3,4,5]=> []
+arr.map()
+arr.map(()=>{})
+//function as an parameter
+    > element
+    > index
+
+//returns an new array
+//transform your array 
+//works on each and every element of an array
+
+forloop
+> push
+
+
+arr.map((element,index)=>console.log(element))
+
+FILTER:
+array.methodname()
+var arr=[1,2,3,4,5]=> []
+arr.filter()
+arr.filter(()=>{})
+//function as an parameter
+    > element
+    > index
+
+//returns an new array
+//works on each and every element of an array
+//keep the desired 
+// condition > true > output
+// condition > false> neglect/escape
+
+
+REDUCE:
+array.methodname()
+var arr=[1,2,3,4,5]=> []
+arr.reduce()
+arr.reduce(()=>{})
+//function as an parameter
+    > accumulator=> 
+    > currentelement(ce)/currentvalue(cv)=> element
+//works on each and every element of an array
+
+//[1,2,3,4,5]=> reduce it to single value=> 1+2+3+4+5=single value
+
+arr.reduce((acc,ce)=>{acc+ce})
+
+
