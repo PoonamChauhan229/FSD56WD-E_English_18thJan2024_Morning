@@ -1,0 +1,65 @@
+<!-- css
+    >styling  ===> color, align etc
+    >great UI => CSS => UX
+    >UI/UX
+    >UI/UX
+    > Website=elegant / beautful etc.....
+    Cascading Styling Sheet
+    > style sheet =< design 
+
+    3 types of CSS
+    inline
+    internal
+    external
+
+    Write a CSS
+    > Selectors 
+        3 ways 
+        🌕 id => attribute => in a tag   =>id Selector => unique 
+        🌕 class=> attribute => in a tag => class Selector
+        🌕 tag=>html tag                 => tag Selector
+
+IN A HTML
+dependancy => HTML
+
+/* tag selector */
+        /* syntax */
+        tagname{
+            propertname1:propertyValue1;
+            propertname2:propertyValue2;
+            propertname3:propertyValue3;
+            ......
+            .....
+            .....
+             propertnamen:propertyValuen;
+        }
+-->
+
+/* class selector */
+
+.className{
+    propertname1:propertyValue1;
+    propertname2:propertyValue2;
+    propertname3:propertyValue3;
+    ......
+    .....
+    .....
+    propertnamen:propertyValuen;
+}
+
+/* id selector */
+
+#idName{
+    propertname1:propertyValue1;
+    propertname2:propertyValue2;
+    propertname3:propertyValue3;
+    ......
+    .....
+    .....
+    propertnamen:propertyValuen;
+}
+
+Commenting=> ctrl+/ => shortcut key 
+JS  =>//  
+HTML=> <!--     -->
+CSS =>   /*  */

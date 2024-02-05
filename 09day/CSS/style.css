@@ -1,0 +1,37 @@
+h5{
+    border: 10px solid blue;
+    height:225px;
+    width: 400px;
+    background-color: black;
+    color:red;
+    /* font-size:200px; */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.extclass{
+    border: 10px solid gold;
+    height:225px;
+    width: 400px;
+    background-color: greenyellow;
+    color:blue;
+    /* font-size:200px; */
+    text-align: center;
+    margin-bottom: 15px;
+}
+#idname{
+    
+}
+
+/* 
+
+Project>
+        index.html => entry point
+        script.js => JS codde
+        style.css => CSS Styling
+
+        > All files should be linked
+        > link to html file
+        >link css > link:css
+
+*/
