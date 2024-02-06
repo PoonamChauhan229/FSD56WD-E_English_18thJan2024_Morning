@@ -1,0 +1,8 @@
+use of important 
+display property: inline, block 
+
+3 types of css
+inline
+internal
+external
+

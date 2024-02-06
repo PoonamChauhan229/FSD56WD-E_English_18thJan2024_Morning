@@ -1,0 +1,14 @@
+div{
+    background-color: blueviolet !important;
+}
+
+/* 
+inline > internal > external
+
+using !important 
+exteranl high priorty
+
+
+
+
+*/
