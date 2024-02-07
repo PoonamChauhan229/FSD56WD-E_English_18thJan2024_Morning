@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container{
+            /* padding: 10px; */
+            border:1px solid red;
+            
+            text-align: center;
+            margin-bottom: 10px;
+            display: flex;
+            /* flex-wrap:wrap-reverse; */
+            /* flex-wrap
+                nowrap> default
+                wrap
+                wrap-reverse
+            */
+
+            /* col > row direction */
+            /* margin: auto; */
+            width:300px;
+            height: 500px;
+            flex-wrap: wrap;
+        }
+        .container1{
+            flex-direction:column-reverse ;
+            /* row
+               row-reverse
+               columun
+               column-reverse 
+            */
+        }
+        .align_contentdiv{
+            /* vertical alignment */
+            align-content:space-around;
+        }
+        .item{
+            padding:50px;            
+        }
+        .item1{
+            background-color: pink;
+        }
+        .item2{
+            background-color: orange;
+        }
+        .item3{
+            background-color: red;
+        }
+        .item4{
+            background-color: navy;
+        }
+        .item5{
+            background-color: brown;
+        }
+        .item6{
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <!-- grid and flex
+    container
+    -->
+    <div class="container align_contentdiv">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+    </div>
+
+    
+</body>
+</html>

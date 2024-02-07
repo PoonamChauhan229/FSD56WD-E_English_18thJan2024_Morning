@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .test{
+        width:150px;
+        height:100px;
+        border: 1px solid red;
+        margin-bottom: 5px;
+        background-color: crimson;
+    }
+    .statictest{        
+        position: static;
+        left:100px;
+        /* default => TBRL doesnt have any effect on it */
+    }
+    .relativetest{
+        position: relative;
+        left:70px;
+        top:15px;
+        /* ELemnet shift> orginal position of eleemet
+            Its affect the document flow
+            creating an space
+        */
+    }
+    .absolutetest{
+        position: absolute;
+        left:50px;
+        top:70px;
+        background-color: green;
+        /* Elemnet shift>
+            Parent child relation
+            Body>div 
+            space removed 
+        Its affect the document flow
+
+         */
+    }
+    .absolutetestchild{
+        position: absolute;
+        left:100px;
+        bottom:20px;
+        background-color: lime;   
+    }
+    /* relative absolute */
+    .parentDivAbsolute{
+        position: relative;
+        background-color: aqua;
+        height:300px;
+        width:400px
+    }
+    /* 
+        Relative> PArent
+        absolute >Child
+        Parent> Child relationship
+    */
+    .fixedtest{
+        /* scroollbar  */
+        position: fixed;
+        top :40px;
+        background-color: chocolate;
+    }
+    .stickytest{
+        /* scroollbar  */
+        position: sticky;
+        top:80px;
+        left:20px;
+        background-color: darkolivegreen;
+    }
+</style>
+</head>
+<body>
+    <!-- 
+        -Position=> posotioning your element
+        -Wall clock -Home
+            >Position
+            >Top bottom left right 
+    
+    CSS > position
+        left right top bottom
+
+        position
+        left top
+        right top
+
+        left bottom 
+        right bottom
+
+
+        static > default > in the beowser
+        relative
+        absolute
+        fixed
+        sticky
+
+
+     -->
+
+    <div class="statictest test">Hello World-Static</div>
+    <hr>
+         <div class='relativetest test'>Hello World-Relative</div>
+    <hr>
+
+    <hr>
+         <div class='absolutetest test'>Hello World-Relative</div>
+    <hr>
+
+    <hr>
+    <div class="parentDivAbsolute test">
+        <div class='absolutetestchild test'>Hello World-Relative</div>
+    </div>   
+    <hr>
+
+    <hr>
+        <div class='fixedtest test'>Hello World-Fixed</div>
+    </hr>
+
+    <hr>
+        <div class='stickytest test'>Hello World-Sticky</div>
+    </hr>
+
+
+
+    <p style="margin-bottom: 1500px;"></p>
+<hr>
+</body>
+
+</html>
