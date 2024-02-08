@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: yellow;
+        }
+        /* screen size */
+        /* syntax */
+        @media screen and (max-width:400px){
+            div{
+               background-color: green;
+               font-size: 25px;
+             }
+        }
+        /*  700 it will sow orangered
+            400-699 show yellow
+            0-400 show green
+        */
+        @media screen and (min-width:700px) {
+            div{
+               background-color: orangered;
+               font-weight: bold;
+            }
+            p{
+                background-color: chartreuse;
+                font-style: italic;
+            }            
+        }
+        /* min-width start 600
+           max-width end   768 
+        */
+        @media (min-width:600px) and (max-width:699px){
+            p{
+                background-color: brown;
+            }
+            div{
+                background-color: aqua;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div>Hello, Div Tag, How are you?</div>
+    <p>Hello, P Tag, How are you? </p>
+
+    
+</body>
+</html>
