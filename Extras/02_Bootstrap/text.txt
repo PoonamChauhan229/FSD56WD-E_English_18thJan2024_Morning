@@ -1,0 +1,54 @@
+
+6 Breakpoint:-
+
+X-Small	              None	    320px      <576px     col
+Small	              sm	    ≥576px   <768px     col-sm
+Medium	              md	    ≥768px   <992px     col-md
+Large	              lg	    ≥992px   <1200px    col-lg
+Extra large	          xl	    ≥1200px  <1400px    col-xl
+Extra extra large	  xxl	    ≥1400px  .......    col-xxl
+
+Manufactires:
+T shirt> 
+xs s m l  xl xxl  > 90-95%
+                  > 10-5%  (ALL +....|| Plus sizes  || Customized Tailor) 
+
+Bootstrap:
+None sm md lg  xl xxl  > 90-95% Devices  >>> Solves Our Problem
+                       > 10-5%  (Media Queries)    
+
+
+
+GRID>
+
+>container/container-fluid
+    >rows
+        >cols ===> 12
+    >rows
+        >cols ====> 12
+
+>container ==> mulitiple rows   
+                    > each row should didvided in 12 cols
+
+1+11(12)  > col-1 col-11
+11+1(12)  >col-11 col-1
+1+1+.....(12 times)
+4+4+4(12)
+6+6(12)
+8+4(12)
+2+2+2...(12times)
+1+1+10..(12)
+12 (12)
+
+Permutation and comibnataions
+
+
+col-2 .... other screen size   > xs => xxl
+
+
+col-2 col-lg-4   > xs- md > 2 cols || lg- xxl > 4 cols
+
+col-md-4  col-xl-5    > md- lg > 4 cols  || xl-xxl > 5 cols      
+
+
+
