@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- id :test1 -->
+    <div id="test1">Hi Everyone!!!</div>
+
+    <!-- tags -->
+    <div>
+        <div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- class:test100 -->
+    <div class="test100"></div>    
+    <p class="test100"></p>
+    <h1 class="test100"></h1>
+    <h6 class="test100"></h6>
+
+    <script>
+        //Target the DOM
+        // CSS selectors           
+            //>id selectors
+            //>class selectors
+             //>Tag Selctors
+
+            //  document.getElementById =>        id ==> return the element
+            // document.getElementsByClassName => class ===> return the collection ||Array Like
+            // document.getElementsByTagName   => Tag
+
+            let test1=document.getElementById('test1')
+            console.log(test1)
+            test1.innerHTML="<h1>Hello World</h1>"
+
+            let test100=document.getElementsByClassName('test100')
+            console.log(test100)
+            for(var i=0;i<test100.length;i++){
+                test100[i].innerText="Hi"
+                console.log(test100[i])
+            }
+
+            let testTag=document.getElementsByTagName('div')
+            console.log(testTag)
+
+
+            // Query Selectors
+            // document.querySelector
+            // document.querySelectorAll
+
+            let queryId=document.querySelector('#test1')
+            console.log(queryId)
+
+            let queryClass=document.querySelector('.test100')
+            console.log(queryClass) // 1 element
+
+
+            let queryIdAll=document.querySelectorAll('#test1')
+            console.log(queryIdAll)
+
+            let queryClassAll=document.querySelectorAll('.test100')
+            console.log(queryClassAll)
+
+            let queryTagAll=document.querySelectorAll('div')
+            console.log(queryTagAll)
+
+            
+    </script>
+</body>
+</html>

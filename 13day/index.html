@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            #newHeading1{
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div>
+            <div>
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+            </div>
+        </div>
+
+    <script>
+            console.log(document.URL)
+            console.log(document.title)
+
+            //create an element
+            let division=document.createElement('div')
+            
+            //text|content 
+            division.innerText="Hello World...."
+
+            console.log(division)
+            // put it into the document
+            // <div>Hello World....</div>
+            // inside the body
+
+            document.body.append(division)
+
+
+
+            // innerText => text✅ HTML TAG ❌ ||innerHTML => text✅ + HTML TAG ✅
+
+            let para=document.createElement('p')
+            para.innerHTML="<h1>Hello World... Paragraph Tag</h1>"
+            // para.innerText="<h1>Hello World... Paragraph Tag</h1>"
+
+            //  para.innerHTML="Hello World... Paragraph Tag FRom InnerHTML"
+            //  para.innerText="Hello World... Paragraph Tag FRom InnerTEXT"
+
+            document.body.append(para)
+
+        //     <div class='container'>
+            //     <div class="subConatiner mainHeadingList allHeadings">
+            //         <h1 id="newHeading1">Heading 1</h1>
+            //         <h2 id="newHeading2">Heading 2</h2>
+            //         <h3 id="newHeading3">Heading 3</h3>
+            //     </div>
+        // </div>
+
+        let div1=document.createElement('div')
+        let div2=document.createElement('div')
+
+        let heading1=document.createElement('h1')
+        let heading2=document.createElement('h2')
+        let heading3=document.createElement('h3')
+
+        heading1.innerText="Heading 1"
+        heading2.innerText="Heading 2"
+        heading3.innerText="Heading 3"
+
+        document.body.append(div1)
+        div1.append(div2)
+        // div2.append(heading1,heading2,heading3)
+        div2.appendChild(heading1,heading2,heading3)
+
+        // add a attribute > class || id ||href ||name ||value
+        // setAttribute("attributename","attributevalue")
+        // add at a time only 1 attribute.
+        div1.setAttribute('class',"container")
+        heading1.setAttribute('id',"newHeading1")
+        heading2.setAttribute('id',"newHeading2")
+        heading3.setAttribute('id',"newHeading3")
+
+        // Multiple classes
+        //classList
+        //add
+
+        div2.classList.add('subConatiner','mainHeadingList','allHeadings')
+
+        // style
+        heading3.style.color="red";
+        heading3.style.backgroundColor="yellow";
+        heading3.style.marginLeft="30px";
+
+         //     <div class='container'>
+                // <div class="subConatiner mainHeadingList allHeadings">
+                //     <h1 id="newHeading1">Heading 1</h1>
+                //     <h2 id="newHeading2">Heading 2</h2>
+                //     <h3 id="newHeading3">Heading 3</h3>
+                // </div>
+        // </div>
+
+            let div5=document.createElement('div')
+            div5.classList.add('container')
+            div5.innerHTML=`            
+                                <div class="subConatiner mainHeadingList allHeadings">
+                                        <h1 id="newHeading1">Heading 1</h1>
+                                        <h2 id="newHeading2">Heading 2</h2>
+                                        <h3 id="newHeading3">Heading 3</h3>
+                                </div>
+                            `
+            document.body.append(div5)
+        </script>
+    </body>
+</html>
