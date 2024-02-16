@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="btnclick(event)">CLICK ME</button>
+
+    <button id="btn1">CLICK NOW</button>
+    
+    <p id="test"></p>
+    <input type="text" name="" oninput="display(event)" value="">
+    <input type="text" name="" id="input1" >
+    <!-- ONBLUR -->
+    <input type="text" name="" value="" onblur="blurDisplay(event)">
+    <script>
+        let count=1;
+        function btnclick(event){
+            count++;
+            console.log(event.target)
+            console.log("Button Click Me has been pressed",count)
+            console.log(event.target.innerHTML)
+        }
+
+//  OR    
+    let btn1=document.getElementById('btn1')
+    let testpara=document.getElementById('test')
+    console.log(btn1)
+    btn1.addEventListener('click',()=>{
+        console.log("Button Click Now has been pressed")
+        // testpara.innerHTML=`<h1>Click Event</h1>`
+        testpara.innerText="Hello World"
+        testpara.style.backgroundColor="aqua"
+        testpara.style.padding="20px"
+
+    })
+
+    function display(event){
+        console.log(event.target.value)
+        testpara.innerText=event.target.value
+        testpara.style.backgroundColor="green"
+        testpara.style.padding="20px"
+    }
+
+    input1.addEventListener('input',(event)=>{
+        testpara.innerText=event.target.value
+        testpara.style.backgroundColor="orange"
+        testpara.style.padding="20px"
+
+    })
+
+    function blurDisplay(event){
+        console.log(event.target.value)
+        testpara.innerText=event.target.value
+        testpara.style.backgroundColor="red"
+        testpara.style.padding="20px"
+    }
+
+    //creata an inputbox => id
+    //addeventlistener
+
+
+// Count :1.....
+// onblur(try)
+
+    //oninput
+    //onblur
+    //keyboard
+
+
+    
+    </script>
+</body>
+</html>

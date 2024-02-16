@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            width:100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="test"></div><br>
+    <button onclick="stopAnim()" id="btn">Stop Animation</button>
+    <script>
+        let id=setTimeout(anim,2000)
+        function anim(){
+            var divSize=document.getElementById('test')
+            divSize.style.width="200px";
+            divSize.style.backgroundColor="green"
+            divSize.innerText="Animation Performed"
+            // crean an element
+            // innertext : animation performed successfullt
+        }
+        //clearTimeOut
+
+        function stopAnim(){
+            // animation stopped
+            //clear timer 
+            clearTimeout(id)
+             // crean an element
+            // innertext : animation stopped successfullt
+        }
+        
+    </script>
+</body>
+</html>

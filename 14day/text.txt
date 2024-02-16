@@ -1,0 +1,23 @@
+Window - Common Util functions
+setTimeout vs setInterval
+prompt, Alert, Confirm
+
+
+working with event
+
+
+working with event:
+
+DOM:
+
+EVENTS:
+
+
+PERFORM ANY ACTION ===> EVENT TRIGGER ===> EVENT (OBJECT)
+
+OBJECT => All the information of the element on which action has been performed
+
+
+>directly attaching the events to html element in body tag
+
+>script tag
