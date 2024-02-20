@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p id="increment"></p> -->
+    <div class="card border-warning bg-dark" style="width: 18rem; margin: 200px 0px 0px 500px;">
+        <div class="card-header text-center text-primary fs-4" id="increment"  style="width: 18rem; height: 100px; padding: 30px 0px 0px 0px;">
+          Counter Starts.......
+        </div>        
+      </div>
+    <script>
+
+        // setInterval=> setting up interval
+        // after each interval ..function.. will be executed
+
+        // setInterval(()=>{},interval in ms)
+       // window.setInterval(()=>console.log("Timer1 is called"),1000)
+        //setInterval(()=>console.log("Timer2 is called"),1000)
+
+        // 1 to 10 ===> equals to 10 ==> happy birthday yourname.
+        // 15-20 min time 
+        // 10 mins
+
+        let id=setInterval(counter,1000)
+        let count=0;
+        let increment=document.getElementById('increment')
+        function counter(){
+            count++;
+            increment.innerText=count
+            // console.log(count)
+
+            if(count==10){
+                console.log("happy Birthday Guvi")
+                increment.innerText="Happy Birthday Guvi"
+                increment.classList.remove('text-primary')
+                increment.classList.add('text-warning')
+                //clear the interval
+                clearInterval(id)
+            }
+        }
+    </script>
+</body>
+</html>
