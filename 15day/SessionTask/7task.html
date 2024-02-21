@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- In your HTML Add two buttons, where first button action for full screen mode and the second button for exit from full screen mode. -->
+    <button id="fullMode">full screen mode</button>
+    <button id="exitMode">exit full screen mode</button>
+
+    <script>
+        let rootElement=document.documentElement // root element
+        let fullMode=document.getElementById('fullMode')
+        let exitMode=document.getElementById('exitMode')
+
+        fullMode.addEventListener('click',()=>{
+            rootElement.requestFullscreen()
+        })
+        exitMode.addEventListener('click',()=>{
+            document.exitFullscreen()
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Use prompt to read a value from user and display it in the span element.-->
+    <!-- prompt || span tag || innerText/HTML -->
+    <!-- 10 min -->
+    <span id="spanElement"></span>
+
+    <script>
+        let spanElement=document.getElementById('spanElement')
+        let value=prompt("Enter the value")
+        console.log(value)
+        if(value==null){
+            console.log("Enter the correct Value:")
+            spanElement.innerText="Enter the correct Value:"
+        }else{
+            console.log(value)
+            spanElement.innerText=value
+        }
+    </script>
+
+</body>
+</html>

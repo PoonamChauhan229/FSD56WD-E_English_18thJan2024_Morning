@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Write a Javascript code for character counts in the textarea. -->
+    <input type="text" name="" id="inputText">
+    <!-- span elment=> value -->
+    <!-- span elemnet=> count of value --><br><br>
+    <span id="span1">Value is :</span><br><br>
+    <span id="span2">Word Count :</span><br><br>
+    <span id="span3">Word Count WithoutSpace :</span><br><br>
+    <span id="span4">Word Count WithoutSpace with cursor:</span><br><br>
+    <script>
+        let inputText=document.getElementById('inputText')
+        // console.log(inputText.value)        
+
+        inputText.addEventListener('input',()=>{
+            // console.log(inputText.value.replace(/ /g,"").length+1)
+            let x=inputText.value.replace(/ /g,"").length+1
+            document.getElementById('span1').innerText="Value is :"+inputText.value;
+            document.getElementById('span2').innerText="Word Count :"+inputText.value.length;
+            document.getElementById('span3').innerText="Word Count WithoutSpace :"+inputText.value.replace(/ /g,"").length
+            document.getElementById('span4').innerText="Word Count WithoutSpace with cursor :"+x
+      
+        })
+    </script>
+</body>
+</html>
