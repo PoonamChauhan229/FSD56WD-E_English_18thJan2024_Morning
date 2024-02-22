@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // setTimeout(function(){},900)
+
+        // function1
+        //function2
+
+        function subCall(){
+            console.log("I am callback function")
+        }
+
+        // Normal function
+        function mainNorCall(callback){
+            console.log("Hie i am Main Call")
+            subCall()
+        }
+        mainNorCall()
+
+        // callback
+        function mainCall(callback){
+            console.log("Hie i am Main Call")
+            // functionsubCall()// para
+            callback()
+        }
+        mainCall(subCall)
+        //functionsubCall will be args and it will accepted inside mainCall as a parameter
+        //using that parameter we will call
+
+        // maincall=> subCall
+
+
+
+        function sub1(){
+            console.log("Hie i am Sub Call 1")
+        }
+        function main1(name,callback){            
+            callback()
+            console.log(name)
+        }
+        main1("Guvi",sub1)//args
+
+
+        // operations=> add 2 
+
+        function sub2(res){
+            //display the add 2 no
+            console.log(res)
+        }
+
+        function main2(n1,n2,callback){
+            let add=n1+n2
+            callback(add)
+        }
+        main2(4,5,sub2)
+
+        // using a callback , you all have to display the your name.
+        //10-15 min
+
+        function sub3(res){
+            //display the add 2 no
+            console.log(`My name is ${res}`)
+        }
+
+        function main3(name,callback){
+            callback(name)
+        }
+        main3("Guvi Geek",sub3)
+
+
+        // Callbacks are a fundamental concept in JavaScript, especially in asynchronous programming. They are functions passed as arguments to another function, to be executed later after the completion of some operation.
+
+        // The main use of callbacks is in asynchronous operations, such as handling events, making API requests, or reading files. By passing a callback function, you can specify what should happen after the asynchronous operation completes, without blocking the execution of other code.
+
+        // Callbacks allow for more flexible and dynamic programming patterns, enabling you to execute code based on the result of an operation
+
+
+    </script>
+</body>
+</html>

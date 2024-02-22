@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // callbackhell
+
+        function x(){
+            function y(){
+                function z (){
+                    x()
+                    y()
+                }
+                z()
+                x()
+            }
+        }
+        // multiple nested callbacks
+        // makes code readability, understand difficult
+        //pyramid of doom
+        //it is difficult to follow the code and as well difficult to point out errors
+        //No code modulazration
+        // multiple function dependancy
+
+        // to overcome
+        // > promises
+        // >async await
+
+        
+    </script>
+</body>
+</html>
