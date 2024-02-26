@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const p5=new Promise((resolve,reject)=>{
+            if(false){
+                resolve("P5=>Hey , M there at restuarnt at 4:00pm")
+            }else{
+                reject("P5=>Hey , i wont be able to make at restuarnt at 4:00pm")  
+            }
+        })
+       // console.log(p5) // error> We have to handle the errors> 
+        p5.then((res)=>console.log(res)).catch((error)=>console.log(error))
+
+        let age=2;
+        
+        const p6=new Promise((resolve,reject)=>{
+            if(age>18){
+                resolve("Eligible for voting")
+            }else{
+                reject("Error: Not Eligible for voting")  
+            }
+        })
+       // console.log(p6) // error> We have to handle the errors> 
+       p6.then((res)=>console.log(res)).catch((err)=>console.log(err))
+    </script>
+</body>
+</html>

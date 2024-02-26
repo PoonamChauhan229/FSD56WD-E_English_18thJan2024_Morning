@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // multiple promise 
+        const p5=new Promise((resolve,reject)=>{
+            if(true){
+                resolve("P5=>Hey , Timer Accepted the request")
+            }else{
+                reject("P5=>Hey , Rejected the timer")  
+            }
+        })
+        // console.log(p5)
+
+        const p6=new Promise((resolve,reject)=>{
+            if(true){
+                setTimeout(()=>{ resolve("P6=>Hey , Timer Accepted the request")},1000)
+            }else{
+                reject("P6=>Hey , Rejected the timer")  
+            }
+        })
+        // console.log(p6)
+
+        const p7=new Promise((resolve,reject)=>{
+            if(true){
+                setTimeout(()=>{ resolve("P7=>Hey , Timer Accepted the request")},5000)
+            }else{
+                reject("P7=>Hey , Rejected the timer")  
+            }
+        })
+        // console.log(p7)
+        // p5.then(res=>console.log(res)).catch(err=>console.log(err))
+        // p6.then(res=>console.log(res)).catch(err=>console.log(err))
+        // p7.then(res=>console.log(res)).catch(err=>console.log(err))
+
+        // Promise All
+        Promise.all([p5,p6,p7]).then(res=>console.log(res)).catch(err=>console.log(err))
+        // o/p =>array
+
+        // multiple promise 
+        const p8=new Promise((resolve,reject)=>{
+            if(true){
+                resolve("P8=>Hey , Timer Accepted the request")
+            }else{
+                reject("P8=>Hey , Rejected the timer")  
+            }
+        })
+        // console.log(p5)
+
+        const p9=new Promise((resolve,reject)=>{
+            if(false){
+                setTimeout(()=>{ resolve("P9=>Hey , Timer Accepted the request")},1000)
+            }else{
+                reject("P9=>Hey , Rejected the timer")  
+            }
+        })
+        // console.log(p9)
+
+        const p10=new Promise((resolve,reject)=>{
+            if(true){
+                setTimeout(()=>{ resolve("P10=>Hey , Timer Accepted the request")},5000)
+            }else{
+                reject("P10=>Hey , Rejected the timer")  
+            }
+        })
+        // console.log(p10)
+
+        // p8.then(res=>console.log(res)).catch(err=>console.log(err))
+        // p9.then(res=>console.log(res)).catch(err=>console.log(err))
+        // p10.then(res=>console.log(res)).catch(err=>console.log(err))
+
+        // Promise All
+        Promise.all([p8,p9,p10]).then(res=>console.log(res)).catch(err=>console.log(err))
+        // o/p =>array
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  -->
+
+    <script>
+
+        // create an object > what we should > new keyword
+        // XML http req
+        // oops concepts
+
+        //syntax
+        const p=new Promise(()=>{})
+        console.log(p)
+
+        const p1=new Promise((resolve,reject)=>{
+            resolve("Hey , M there at restuarnt at 4:00pm")
+        })
+        console.log(p1)
+
+        const p2=new Promise((resolve,reject)=>{
+            reject("Hey , i wont be able to make at restuarnt at 4:00pm")
+        })
+        console.log(p2) // error> We have to handle the errors> 
+
+        const p3=new Promise((resolve,reject)=>{
+            resolve("Hey , M there at restuarnt at 4:00pm")
+            reject("Hey , i wont be able to make at restuarnt at 4:00pm")
+        })
+        console.log(p3) // error> We have to handle the errors> 
+
+
+        const p4=new Promise((resolve,reject)=>{
+            reject("Hey , i wont be able to make at restuarnt at 4:00pm")            
+            resolve("Hey , M there at restuarnt at 4:00pm")
+        })
+        console.log(p4) // error> We have to handle the errors> 
+
+        // conditional statement
+        // if else
+
+        const p5=new Promise((resolve,reject)=>{
+            if(false){
+                resolve("P5=>Hey , M there at restuarnt at 4:00pm")
+            }else{
+                reject("P5=>Hey , i wont be able to make at restuarnt at 4:00pm")  
+            }
+        })
+        console.log(p5) // error> We have to handle the errors> 
+        p5.then((res)=>console.log(res)).catch((error)=>console.log(error))
+
+
+
+
+
+        let age=2;
+        
+        const p6=new Promise((resolve,reject)=>{
+            if(age>18){
+                resolve("Eligible for voting")
+            }else{
+                reject("Error: Not Eligible for voting")  
+            }
+        })
+        console.log(p6) // error> We have to handle the errors> 
+
+        // age > from the user > prompt 
+
+        p6.then((res)=>console.log(res)).catch((err)=>console.log(err))
+
+    </script>
+</body>
+</html>
