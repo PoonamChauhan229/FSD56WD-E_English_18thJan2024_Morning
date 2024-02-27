@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var req= fetch('https://restcountries.com/v2/all')
+       console.log(req)
+
+    //    fetch> alternative to XML HTTP REQUEST
+    //    fetch(url)
+    //    async ops
+
+    console.log(1)
+    
+    var req1= fetch('https://restcountries.com/v2/all')
+    console.log(req1)
+    // .json() method 
+    req1.then(res=>{
+        console.log(res)
+        return res;//promise => return the response
+    }).then((data)=>{
+        console.log(data)
+        // console.log(data.json())
+         return data.json()//promise => return the array 250 + convert into json
+    }).then(country=>console.log(country)) //=>  printing the data
+
+
+    var req2= fetch('https://restcountries.com/v2/all')
+    req2.then(res=>res.json()).then(data=>console.log(data)).catch(err=>console.log(err))
+
+    // muliple .then => chaining 
+
+    console.log(111)
+
+    //Task :Using the Open Weather Map, get the London's Weather Data  > console
+    // 15 mins 
+    let cityName="London"
+    let apiKey=`41575f34d7cb96cd9f250e887e1f7ef3`
+    let url=`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`
+    console.log(url)
+
+    var req2= fetch(url)
+    req2.then(res=>res.json()).then(data=>console.log(data)).catch(err=>console.log(err))
+
+
+    </script>
+</body>
+</html>

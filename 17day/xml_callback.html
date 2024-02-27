@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // xml_callback
+        function displayCountriesdata(jsonData){
+            console.log("Rest Countries Data:",jsonData)
+        }
+
+        function getCountriesData(callback){
+            var request=new XMLHttpRequest();
+            request.open("GET","https://restcountries.com/v2/all")
+            request.send()
+            request.onload=function(){
+            // console.log(request.response)
+                if(request.status==200){
+                    var data=JSON.parse(request.response)
+                    callback(data)
+                }else{
+                    callback("Some Error Occured:"+request.status)
+                    }            
+            }
+        }         
+        getCountriesData(displayCountriesdata)
+        
+    </script>
+</body>
+</html>
