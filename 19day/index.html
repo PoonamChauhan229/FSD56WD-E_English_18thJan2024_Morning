@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        CRUD OPERATIONS
+        FB POST 
+
+        C CREATE   POST
+        R READ     GET
+        U UPDATE   PUT
+        D DELETE   DELETE
+
+        WHAT OPERATION > READ > METHOD GET 
+
+        SERVER > MOCKAPI SERVER > CRUD OPS
+
+        
+
+    -->
+    <script>
+
+        let url=`https://652e7b520b8d8ddac0b1761f.mockapi.io/users`
+
+        // GET ALL THE USERS> USERLIST
+
+        async function getUserData(){
+            let res=await fetch(url)
+            let data=await res.json()
+            console.log(data)
+        }
+        getUserData()
+
+        // CREATE A NEW USER
+        // METHOD POST
+        // HEADERS
+        // JSON > Parse || stringify
+
+        async function createUser(){
+            let newUser={
+                "name": "New User1",
+                "email": "newuser1@gmail.com",
+            }
+
+            let res=await fetch(url,{
+                method:"POST",
+                headers: {'content-type':'application/json'},
+                body:JSON.stringify(newUser)
+            })
+            // let data=await res.json()
+            // console.log(data)
+        }
+        //createUser()
+
+        // GET a SPECIFC USER WRT ID : 10 MIN 12:30
+        let userId=14
+        console.log(`${url}/${userId}`)
+        async function getUserSpecificData(){
+            let res=await fetch(`${url}/${userId}`)
+            let data=await res.json()
+            console.log(data)
+        }
+        getUserSpecificData()
+
+        //DELETE
+        let deleteUserId=4
+        console.log(`${url}/${deleteUserId}`)
+        async function deleteUser(){           
+                let res=await fetch(`${url}/${deleteUserId}`,{
+                    method:"DELETE"
+                })
+                let data=await res.json()
+                console.log(data)
+            }
+        deleteUser()
+
+
+        // Error Handling + Update METHOD 
+    </script>
+</body>
+</html>

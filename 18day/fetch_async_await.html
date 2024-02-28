@@ -50,7 +50,52 @@
             // > Bootstrap 
         
 
-        //Challenge2:
+        //Challenge2: 10:35 : 15 min end 
+            // rest countries api
+            // open weather app api
+            // open the documenation > current weather data > find the api url > with respect to lat  & lon > o/p weather data 
+            // get the lat and lon form the rest countries > pass that to api url open weather map
+            //  ex > 100  67.8
+            // open weather map api url o/p weather data 
+            // console 
+            // async await 
+
+            let restCountriesUrl=`https://restcountries.com/v2/all`
+            
+            async function getDetails(){
+                let data=await fetch(restCountriesUrl)
+                let res= await data.json()
+                console.log(res)
+                // 1st index
+                // 0-250
+                //Math.random => index no 
+                let lat=res[0].latlng[0]
+                let lon=res[0].latlng[1]
+                console.log("Lat:",lat,"Lon:",lon)
+                let weatherDataUrl=`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
+                let data1=await fetch(weatherDataUrl)
+                let res1=await data1.json()
+                console.log(res1)
+            }
+            getDetails()
+
+
+            // using promises
+
+            let extractRestCountriesData=fetch(restCountriesUrl)
+            extractRestCountriesData
+            .then(data=>data.json())
+            .then(res=>{                
+                console.log(res)
+                let lat=res[0].latlng[0]
+                let lon=res[0].latlng[1]
+                console.log("Lat:",lat,"Lon:",lon)
+                let weatherDataUrl=`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
+
+                fetch(weatherDataUrl).then(res1=>res1.json()).then(data1=>console.log(data1))
+            }
+            )
+
         
 
 
