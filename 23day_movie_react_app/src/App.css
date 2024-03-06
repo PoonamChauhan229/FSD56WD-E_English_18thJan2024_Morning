@@ -1,0 +1,22 @@
+.movieContainer{
+    height:430px;
+    width:315px;
+    border:1px solid red;
+    margin-bottom: 2%;
+}
+.moviePoster{
+    height:300px;
+    width:315px;
+}
+*{
+    padding: 0;
+    margin:0;
+}
+.movieSummary{
+    overflow: hidden;
+    height: 75px;
+}
+.movieSpecs{
+    display: flex;
+    justify-content: space-between;
+}
