@@ -17,14 +17,9 @@ export const MovieCard=({name,poster,rating,summary})=>{
                 <h4 className="movieRating">{rating}</h4>
             </div>    
             {/* conditional rendering */}
-            { show && <p className="movieSummary">{summary}</p>}
-
-            
+            { show && <p className="movieSummary">{summary}</p>}           
                 
-                    {/* Like  Dilike button */}
-                {/* <button>Like</button>
-                <button>Dislike</button> */}
-
+                {/* Like  Dilike button */}
                 <Counter/>
 
         </div>
