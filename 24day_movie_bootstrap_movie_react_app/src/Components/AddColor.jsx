@@ -21,12 +21,13 @@ export const AddColor = () => {
   return (
             <>
                 <input type="text" name="" id="" value={colorVal} onChange={(e)=>setColorVal(e.target.value)} style={inputStyle}/>
+                
                 <button onClick={()=>{
                     console.log(colorVal)
                     setcolorList(colorVal)
                 }}>Add Color</button>
-
-        
+                
+                <br/><br/>
                 <div style={divStyle}></div>
             </>
         );

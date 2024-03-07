@@ -76,13 +76,18 @@ function App() {
     }
   ];
   return (
-    <div className='d-flex flex-wrap' style={{gap:"2%"}}>
+    <>
       <AddColor/>
+    
+    <div className='d-flex flex-wrap' style={{gap:"2%"}}>
+      
     {
       // movie.map((element)=>(<MovieCard {...element}/>))
     }
       
     </div>
+
+    </>
   )
 }
 
