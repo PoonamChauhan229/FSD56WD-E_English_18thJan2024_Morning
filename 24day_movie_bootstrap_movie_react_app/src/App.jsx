@@ -1,4 +1,5 @@
 import './App.css'
+import { AddColor } from './Components/AddColor';
 import { MovieCard } from './Components/MovieCard'
 function App() {
   
@@ -75,9 +76,10 @@ function App() {
     }
   ];
   return (
-    <div className='App'>
+    <div className='d-flex flex-wrap' style={{gap:"2%"}}>
+      <AddColor/>
     {
-      movie.map((element)=>(<MovieCard {...element}/>))
+      // movie.map((element)=>(<MovieCard {...element}/>))
     }
       
     </div>
@@ -85,3 +87,9 @@ function App() {
 }
 
 export default App
+
+//App.jsx:78 Warning: Each child in a list should have a unique "key" prop.
+
+// Check the render method of `App`. See https://reactjs.org/link/warning-keys for more information.
+// at MovieCard (http://localhost:5173/src/Components/MovieCard.jsx?t=1709793802060:20:29)
+// at App

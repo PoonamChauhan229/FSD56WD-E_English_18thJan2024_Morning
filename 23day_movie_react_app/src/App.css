@@ -1,12 +1,16 @@
 .movieContainer{
     height:430px;
-    width:315px;
+    width:295px;
     border:1px solid red;
     margin-bottom: 2%;
+    margin-top: 1%;
+    border-radius: 5%;
+    margin-left: 2px;
 }
 .moviePoster{
     height:300px;
-    width:315px;
+    width:295px;
+    border-radius: 5%;
 }
 *{
     padding: 0;
@@ -19,4 +23,9 @@
 .movieSpecs{
     display: flex;
     justify-content: space-between;
+}
+.App{
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px
 }
