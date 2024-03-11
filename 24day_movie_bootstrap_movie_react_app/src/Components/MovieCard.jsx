@@ -9,7 +9,7 @@ export const MovieCard=({name,poster,rating,summary})=>{
    
     return(
         <>   
-        <div className="card m-1 ms-2" style={{width: "19rem",height:"480px"}}>
+        <div className="card m-1 ms-2 bg-dark text-white" style={{width: "19rem",height:"480px"}}>
             <img src={poster} className="card-img-top" style={{height:"300px"}} alt="..."/>
             <div className="card-body">
               <div className='d-flex justify-content-between'>
