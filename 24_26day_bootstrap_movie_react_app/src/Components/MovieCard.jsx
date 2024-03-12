@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import {Counter} from './Counter'
-export const MovieCard=({name,poster,rating,summary})=>{
+import {useNavigate} from 'react-router-dom'
+export const MovieCard=({name,poster,rating,summary,id})=>{
+    // console.log("Id is ",id)
+    const navigate=useNavigate()
    const [show,setShow]=useState(true)
    const ratingStyle={
     // backgroundColor:"pink"
@@ -15,8 +18,11 @@ export const MovieCard=({name,poster,rating,summary})=>{
               <div className='d-flex justify-content-between'>
               <div className='d-flex'>
                     <h6 className="card-title">{name}</h6>
-                    <h6 onClick={()=>setShow(!show)}
-                >{show?"🔽":"🔼"}</h6>
+                    <h6 onClick={()=>setShow(!show)}>{show?"🔽":"🔼"}</h6>
+                   
+                    {/* Trailer of a movie will be displayed here */}
+                    <h6 onClick={()=>navigate(`/movies/${id}`)}>ℹ</h6>
+                    
                </div>
                <div style={ratingStyle}>{rating}</div>
               </div>
@@ -27,4 +33,8 @@ export const MovieCard=({name,poster,rating,summary})=>{
         </>
     )
 }
+
+//useNavigate Hook 
+// url/xyz
+
 

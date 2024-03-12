@@ -9,9 +9,11 @@ import {Route,Routes} from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import NotFound from './Components/NotFound';
 import { Navigate } from 'react-router-dom';
+import MovieDetails from './Components/MovieDetails';
 
 function App() {
   const [movieList,setMovieList]=useState(movie) 
+  // console.log(movie[2])
     
   return (
     <div className='bg-dark text-white'>  
@@ -32,7 +34,7 @@ function App() {
         <Route path='/newmovie' element={<Navigate replace to='/addmovie'/>}/>
 
         {/* task 4:  */}
-        <Route path='/404' element={<NotFound/>}/>
+        {/* <Route path='/404' element={<NotFound/>}/> */}
         {/* "*" */}
 
       {/* Navigation > 404 */}
@@ -40,7 +42,9 @@ function App() {
         old path ='*'
         new path ='/404'
         */}
-      <Route path='*' element={<Navigate replace to='/404'/>}/>
+      {/* <Route path='*' element={<Navigate replace to='/404'/>}/> */}
+
+      <Route path='/movies/:id' element={<MovieDetails movieList={movieList}/>}/>
       
     </Routes>
      </div>

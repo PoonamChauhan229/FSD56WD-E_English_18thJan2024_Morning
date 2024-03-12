@@ -1,0 +1,22 @@
+// Conditoinal Rendering:
+// {true:display 
+//  false:dont display   
+// }
+
+//if else
+//if(a<20){console.log("correct")}else{console.log("incorrect")}
+
+// ternary operator
+//condition?truedata:falsedata
+//a<20?"correct":"notcorrect"
+
+
+//Router > Routing > Navigating 
+//Hash Router > Old browser 
+//Browser Router >Old + New 
+
+// Browser Router 
+
+// https://reactrouter.com/en/main/upgrading/v6-data#current-application
+
+
