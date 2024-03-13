@@ -1,48 +1,67 @@
-import {Link} from 'react-router-dom'
-const Navbar = () => {
-  return (
-   <>
-      {/* With a load and reload */}
-     {/* <a href="/">Home</a> &nbsp;
-     <a href="/addcolor">AddColor</a>  &nbsp;
-     <a href="/addmovie">AddMovie</a>   */}
-    {/* <br></br> */}
-    {/* Without a referesh and load */}
-     {/* <Link to='/'>Home</Link>  &nbsp;
-     <Link to='/addcolor'>AddColor</Link>  &nbsp;
-     <Link to='/addmovie'>AddMovie</Link>  &nbsp; */}
-          {/* Task:
-     Choose a navbar , whichever navbar u like it from bootstrap
-     implement here and do the necessasry changes
-     11:20 : 11:30-11:35      
-     
-     */}
 
-<nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
-  <div className="container-fluid">
-    <Link className="navbar-brand" to='/'>Big Show</Link>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to='/'>Home</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to='/addcolor'>AddColor</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to='/addmovie'>AddMovie</Link>
-        </li>
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
+
+
+function Navbar() {
+    const navigate=useNavigate()
+  return (
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      <AppBar component="nav">
+        <Toolbar>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          >
+            BigShow
+          </Typography>
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>         
+              <Button  sx={{ color: '#fff' }} 
+              onClick={()=>navigate('/')}
+              >
+                Home
+              </Button>
+              <Button  sx={{ color: '#fff' }}
+               onClick={()=>navigate('/addmovie')}
+              >
+                Add Movie
+              </Button>
+              <Button  sx={{ color: '#fff' }}
+               onClick={()=>navigate('/addcolor')}
+              >
+                Add Color
+              </Button>
+
+              <Button  sx={{ color: '#fff' }}
+               onClick={()=>navigate('/propdrilling')}
+              >
+                Prodrilling
+              </Button>
+
+              <Button  sx={{ color: '#fff' }}
+               onClick={()=>navigate('/usecontext')}
+              >
+                UseContext
+              </Button>
+        
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <nav>
        
-      </ul>
-    </div>
-  </div>
-</nav>
-   
-   </>
-  )
+      </nav>
+      <Box component="main" sx={{ p: 3 }}>      
+       
+      </Box>
+    </Box>
+  );
 }
 
-export default Navbar
+export default Navbar;

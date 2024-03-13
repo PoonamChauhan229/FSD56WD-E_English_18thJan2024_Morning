@@ -70,5 +70,6 @@ const samplemovieObj= {
   name:"Anbe Sivam",  
   poster: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSevEToENmOxHsqrv36yGy2pHdUo3boHo3EkZ7wC6ad46JZwhSZ",
   rating: "9",
-  summary: "Anbarasu, an advertisement-filmmaker, goes to Bhubaneshwar on a business trip and gets stranded at an airport due to heavy rains. His life takes a turn when he meets Nallasivam, a co-passenger and befriends him."
+  summary: "Anbarasu, an advertisement-filmmaker, goes to Bhubaneshwar on a business trip and gets stranded at an airport due to heavy rains. His life takes a turn when he meets Nallasivam, a co-passenger and befriends him.",
+  trailer:"https://www.youtube.com/embed/lPLN69KAukE"
 }

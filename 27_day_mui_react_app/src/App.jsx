@@ -1,22 +1,28 @@
 import { useState } from 'react';
 import './App.css'
-import { AddColor } from './Components/AddColor';
+import { AddColor } from './Components/MovieComponent/AddColor';
 
-import {movie} from './utilis/constant'
-import AddMovie from './Components/AddMovie';
-import MovieList from './Components/MovieList';
+import {movie} from './utilis_movie/constant'
+import AddMovie from './Components/MovieComponent/AddMovie';
+import MovieList from './Components/MovieComponent/MovieList';
 import {Route,Routes} from 'react-router-dom'
 import Navbar from './Components/Navbar'
-import NotFound from './Components/NotFound';
+import NotFound from './Components/MovieComponent/NotFound';
 import { Navigate } from 'react-router-dom';
-import MovieDetails from './Components/MovieDetails';
+import MovieDetails from './Components/MovieComponent/MovieDetails';
+import MainParent01 from './Components/PropDrilling/MainParent01';
+import UseContextMainParent01 from './Components/UseContext/UseContextMainParent01';
+
 
 function App() {
   const [movieList,setMovieList]=useState(movie) 
   // console.log(movie[2])
     
   return (
-    <div className='bg-dark text-white'>  
+    <div>  
+   
+    <br/>
+    
     <Navbar/>
     <Routes>
       <Route path ='/' element={<MovieList movieList={movieList}/>}/>
@@ -45,7 +51,8 @@ function App() {
       {/* <Route path='*' element={<Navigate replace to='/404'/>}/> */}
 
       <Route path='/movies/:id' element={<MovieDetails movieList={movieList}/>}/>
-      
+      <Route path='/propdrilling' element={<MainParent01/>}/> 
+      <Route path='/usecontext' element={<UseContextMainParent01/>}/> 
     </Routes>
      </div>
   )
