@@ -2,9 +2,11 @@ import { useContext, useState } from 'react'
 import {Counter} from './Counter'
 import {useNavigate} from 'react-router-dom'
 import namingContext from '../../utilis_usecontext/namingContext'
+import cartContext from '../../utilis_movie/cartContext'
 export const MovieCard=({name,poster,rating,summary,id})=>{
-
     const datactxt=useContext(namingContext)
+    const  [cartUCtxt,setcartUCtxt]=useContext(cartContext)
+
     // console.log("Id is ",id)
     const navigate=useNavigate()
    const [show,setShow]=useState(true)
@@ -33,7 +35,11 @@ export const MovieCard=({name,poster,rating,summary,id})=>{
                     <h6 onClick={()=>{
                         setctxtShow(!ctxshow)
                         setShow(false)                        
-                        }}>🎀</h6>                    
+                        }}>🎀</h6>  
+
+                    <h6 className='border'
+                    onClick={()=>setcartUCtxt(cartUCtxt+1)}
+                    >➕UC</h6>                    
                     </div>
                     <div style={ratingStyle}>{rating}</div>
               </div>

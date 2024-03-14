@@ -1,4 +1,8 @@
 import { useState } from "react"
+import Badge from '@mui/material/Badge';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import ThumbDownIcon from '@mui/icons-material/ThumbDown';
+import IconButton from '@mui/material/IconButton';
 export const Counter=()=>{
     // const like=0 // local variable
 
@@ -7,31 +11,33 @@ export const Counter=()=>{
     const[disLike,setDisLike]=useState(0)
     // setLike(1)
     return(
-        <>  <div className="counterContainer">
-           
-               {/* Like  */}
-            <button 
-            className="btn btn-primary"
-            onClick={()=>{
-                // like+1
-                setLike(like+1)
-                console.log(like)
-                }}>👍 {like}
-            </button>
-
-            {/* Dislike Button : 10 min*/}
-
-            <button
-            className="btn btn-danger"
-            onClick={()=>{
-                // disLike+1
-                setDisLike(disLike+1)
-                console.log(disLike)
-                }}>👎 {disLike}
-            </button>
+        <>  
+        
+        <IconButton aria-label="share"
+         onClick={()=>{
+            // like+1
+            setLike(like+1)
+            console.log(like)
+            }}       
+        >
+          <Badge badgeContent={like} color="primary">
+            <ThumbUpIcon color="action" />
+          </Badge>
+        </IconButton>
 
 
-            </div>  
+        <IconButton aria-label="share"
+        onClick={()=>{
+            // disLike+1
+            setDisLike(disLike+1)
+            console.log(disLike)
+            }}
+        
+        >
+        <Badge badgeContent={disLike} color="primary">
+          <ThumbDownIcon color="action" />
+        </Badge>
+        </IconButton>
         </>
     )
 }

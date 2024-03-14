@@ -6,10 +6,13 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import cartContext from '../utilis_movie/cartContext';
 
 
 function Navbar() {
     const navigate=useNavigate()
+    const cartValUCtxt=useContext(cartContext)
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -49,6 +52,11 @@ function Navbar() {
                onClick={()=>navigate('/usecontext')}
               >
                 UseContext
+              </Button>
+
+              <Button  sx={{ color: '#fff' }}             
+              >
+                UC-Cart {cartValUCtxt}
               </Button>
         
           </Box>

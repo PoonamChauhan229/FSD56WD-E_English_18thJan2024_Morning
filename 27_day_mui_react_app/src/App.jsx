@@ -11,14 +11,16 @@ import NotFound from './Components/MovieComponent/NotFound';
 import { Navigate } from 'react-router-dom';
 import MovieDetails from './Components/MovieComponent/MovieDetails';
 import MainParent01 from './Components/PropDrilling/MainParent01';
-import UseContextMainParent01 from './Components/UseContext/UseContextMainParent01';
-
-
+import UseContextMainParent01 from './Components/UseContextMainParent01';
+import cartContext from './utilis_movie/cartContext';
+import MuiTest from './Components/MovieComponent/MuiTest'
 function App() {
   const [movieList,setMovieList]=useState(movie) 
+  const [cartUCtxt,setcartUCtxt]=useState(0)
   // console.log(movie[2])
     
   return (
+    <cartContext.Provider value={[cartUCtxt,setcartUCtxt]}>
     <div>  
    
     <br/>
@@ -26,6 +28,8 @@ function App() {
     <Navbar/>
     <Routes>
       <Route path ='/' element={<MovieList movieList={movieList}/>}/>
+      {/* <Route path ='/' element={<MuiTest movieList={movieList}/>}/> */}
+
       <Route path='/addcolor' element={<AddColor/>}/>
       <Route path='/addmovie' element={<AddMovie movieList={movieList} setMovieList={setMovieList} />}/>
        
@@ -55,6 +59,7 @@ function App() {
       <Route path='/usecontext' element={<UseContextMainParent01/>}/> 
     </Routes>
      </div>
+     </cartContext.Provider>
   )
 }
 

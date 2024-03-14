@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
-import Parent02 from './Parent02'
+import Parent02 from './UseContext_Without_Provider/Parent02'
+import MainApp from './UseContext_With_Provider/MainApp'
 
 const UseContextMainParent01 = () => {
+ 
    return (
     <>
-      <div>UseContextMainParent01</div>
+      <div>UseContextMainParent01-UseContext WIthout  Provider</div>
+      <br/>
     <Parent02/>
+    <br/><hr/>
+
+    <div>UseContext With Provider</div>
+     <MainApp/>
     
     </>
   )
@@ -36,8 +42,9 @@ export default UseContextMainParent01
 
 // data, u want to modify
 //1- createContext
-//2- provide the Context 
-//3- useContext
+//2- data +modify data > useState Hook
+//3- provide the Context + pass the value
+//4- useContext
 
 
 //create it inside an utilis folder
