@@ -14,6 +14,7 @@ import MainParent01 from './Components/PropDrilling/MainParent01';
 import UseContextMainParent01 from './Components/UseContextMainParent01';
 import cartContext from './utilis_movie/cartContext';
 import MuiTest from './Components/MovieComponent/MuiTest'
+import TicTacToe from './Components/TicTacToe/TicTacToe';
 function App() {
   const [movieList,setMovieList]=useState(movie) 
   const [cartUCtxt,setcartUCtxt]=useState(0)
@@ -23,10 +24,12 @@ function App() {
     <cartContext.Provider value={[cartUCtxt,setcartUCtxt]}>
     <div>  
    
+   
     <br/>
     
     <Navbar/>
-    <Routes>
+
+     <Routes>
       <Route path ='/' element={<MovieList movieList={movieList}/>}/>
       {/* <Route path ='/' element={<MuiTest movieList={movieList}/>}/> */}
 
@@ -57,6 +60,7 @@ function App() {
       <Route path='/movies/:id' element={<MovieDetails movieList={movieList}/>}/>
       <Route path='/propdrilling' element={<MainParent01/>}/> 
       <Route path='/usecontext' element={<UseContextMainParent01/>}/> 
+      <Route path='/tictactoe' element={<TicTacToe/>}/>
     </Routes>
      </div>
      </cartContext.Provider>

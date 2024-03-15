@@ -1,0 +1,27 @@
+.gamebox{
+    height:100px;
+    width:100px;
+    border:1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-size: 100px;
+}
+/* 9 times  */
+
+/* .board{
+    width:302px;
+    border:1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+.board{
+    width:300px;
+    border:1px solid black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.board :hover{
+    background-color: rgb(221, 216, 216);
+}

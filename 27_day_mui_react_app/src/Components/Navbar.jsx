@@ -58,6 +58,12 @@ function Navbar() {
               >
                 UC-Cart {cartValUCtxt}
               </Button>
+
+              <Button  sx={{ color: '#fff' }}   
+                onClick={()=>navigate('/tictactoe')}     // route > component     
+              >
+               TicTacToe
+              </Button>
         
           </Box>
         </Toolbar>

@@ -42,16 +42,27 @@ export default function MuiTest({name,poster,rating,summary,id}) {
   color: rating>8?"green":"red"
 }
 
+// "GUVI"> G
+
+
+// let x = 2, y = 2, z = 2;
+// if(x==y==z)
+// console.log("Enter")
+// else
+// console.log("Exit")
+
    return (
     <Card sx={{ width: "300px",margin:"0px 5px 5px 5px" }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+            {name[0]}
           </Avatar>
         }
         action={
-          <IconButton aria-label="settings">
+          <IconButton aria-label="settings"
+          onClick={()=>navigate(`/movies/${id}`)}
+          >
             <MoreVertIcon />
           </IconButton>
         }
@@ -61,7 +72,7 @@ export default function MuiTest({name,poster,rating,summary,id}) {
       <CardMedia
         component="img"
         height="194"
-        image="https://englishtribuneimages.blob.core.windows.net/gallary-content/2021/6/Desk/2021_6$largeimg_977224513.JPG"
+        image={poster}
         alt="Paella dish"
       />
        <CardActions disableSpacing>
