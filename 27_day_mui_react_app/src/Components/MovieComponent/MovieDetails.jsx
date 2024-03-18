@@ -1,24 +1,39 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
+
 import { useNavigate, useParams } from 'react-router-dom'
 
 const MovieDetails = ({movieList}) => {
     const navigate=useNavigate()
     const {id}=useParams()
-    // console.log("id is ",id)
+    console.log("id is ",id)
     //  console.log(movieList[id])
     // array of objects
     // movie[0] movieList[0]
     // movie[1] movieList[1]
     //movieList[id]
-    const movie=movieList[id]
+    const [movie,setMovie]=useState() 
+    // const movie=movieList[id];
+   
+  // console.log('https://65111d14829fa0248e3f850c.mockapi.io/movies/'+id)
+    useEffect(()=>{
+      getMovies()
+    },[])
+  
+    async function getMovies(){
+      const data=await fetch('https://65111d14829fa0248e3f850c.mockapi.io/movies/'+id)
+      const res=await data.json()
+      console.log(res)
+      setMovie(res)
+       console.log(movie)
+    }
     console.log(movie)
-
-    
   return (
    
     // it should be wrt to that movieid 
     <>
-         {/* <div>MovieDetails-{id}</div> */}
+       
+       { movie && <div>
+           <div>MovieDetails-{id}</div>
         <h3>{movie.name}</h3>
         {/* Trailer */}
 
@@ -28,6 +43,8 @@ const MovieDetails = ({movieList}) => {
         <button className='btn btn-primary mb-3 px-5'
         onClick={()=>{navigate(-1)}}
         >🔙 ▶⌛▶🏡</button>
+        </div>
+}
 
 
     

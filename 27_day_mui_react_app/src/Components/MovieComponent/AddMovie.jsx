@@ -11,6 +11,24 @@ const AddMovie = ({movieList,setMovieList}) => {
     const [movieRating,setMovieRating]=useState("")
     const [movieSummary,setMovieSummary]=useState("")
     const [movieTrailer,setMovieTrailer]=useState("")
+
+    const addmovies=()=>{
+      const movie={name:movieName,poster:moviePoster,rating:movieRating,summary:movieSummary,trailer:movieTrailer}
+      console.log(movie)
+      postMovies(movie)
+      
+      }
+      const postMovies=async(movie)=>{
+        const data=await fetch('https://65111d14829fa0248e3f850c.mockapi.io/movies/',{
+          method:"POST",
+          body:JSON.stringify(movie),
+          headers:{
+            "Content-Type":"application/json"
+          }
+        })
+        const res=await data.json()
+        console.log(res)
+      }
   return (
 
     <>
@@ -52,12 +70,10 @@ const AddMovie = ({movieList,setMovieList}) => {
           width:"10%",
           margin:"1% 1% 1% 38%"
         }} 
-      variant="contained" onClick={()=>{
-      const newMovie={name:movieName,poster:moviePoster,rating:movieRating,summary:movieSummary,trailer:movieTrailer}
-      console.log(newMovie)
-      setMovieList([...movieList ,newMovie])
-      }}
-      > Add Movie</Button>
+      variant="contained" onClick={()=>addmovies()}>Add Movie</Button>
+        
+        
+        
 
     <Button 
     sx={{

@@ -7,7 +7,8 @@ const MovieList = ({movieList}) => {
     {
       // movieList.map((element,index)=>(<MovieCard key={index} {...element} id={index}/>))
 
-      movieList.map((element,index)=>(<MuiTest key={index} {...element} id={index}/>))
+      // movieList.map((element,index)=>(<MuiTest key={index} {...element} id={index}/>))
+      movieList.map((element,index)=>(<MuiTest key={index} {...element} />))
 
 
     }

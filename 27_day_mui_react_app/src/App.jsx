@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 import { AddColor } from './Components/MovieComponent/AddColor';
 
@@ -15,19 +15,50 @@ import UseContextMainParent01 from './Components/UseContextMainParent01';
 import cartContext from './utilis_movie/cartContext';
 import MuiTest from './Components/MovieComponent/MuiTest'
 import TicTacToe from './Components/TicTacToe/TicTacToe';
+
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
 function App() {
-  const [movieList,setMovieList]=useState(movie) 
+  // const [movieList,setMovieList]=useState(movie)
+  const [movieList,setMovieList]=useState([]) 
   const [cartUCtxt,setcartUCtxt]=useState(0)
   // console.log(movie[2])
+
+  // Theme Chnage
+  const [mode,setMode]=useState("dark")
+  const theme = createTheme({
+    palette: {
+      mode: mode,
+    },
+  });
+
+  // API CALL:
+  useEffect(()=>{
+    getMovies()
+  },[])
+
+  async function getMovies(){
+    const data=await fetch('https://65111d14829fa0248e3f850c.mockapi.io/movies')
+    const res=await data.json()
+    console.log(res)
+    setMovieList(res)
+  }
+  //empty dependancy
+  // []: not passed, render again and again
+  // []:pass ,  one call after the render
+  
+  //pass some dependancy
+  // [mode] > on mode change|| state change it will be called > useffect is dependant on mode
     
   return (
+    <ThemeProvider theme={theme}>
     <cartContext.Provider value={[cartUCtxt,setcartUCtxt]}>
     <div>  
    
    
     <br/>
     
-    <Navbar/>
+    <Navbar mode={mode} setMode={setMode}/>
 
      <Routes>
       <Route path ='/' element={<MovieList movieList={movieList}/>}/>
@@ -64,6 +95,7 @@ function App() {
     </Routes>
      </div>
      </cartContext.Provider>
+     </ThemeProvider>
   )
 }
 

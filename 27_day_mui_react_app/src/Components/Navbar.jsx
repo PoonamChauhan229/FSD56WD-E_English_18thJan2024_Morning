@@ -10,7 +10,7 @@ import { useContext } from 'react';
 import cartContext from '../utilis_movie/cartContext';
 
 
-function Navbar() {
+function Navbar({mode,setMode}) {
     const navigate=useNavigate()
     const cartValUCtxt=useContext(cartContext)
   return (
@@ -63,6 +63,12 @@ function Navbar() {
                 onClick={()=>navigate('/tictactoe')}     // route > component     
               >
                TicTacToe
+              </Button>
+
+              <Button  sx={{ color: '#fff' }}
+              onClick={()=>{setMode(mode=="light"?"dark":"light")}}    
+              >
+               {mode=="light"?"DARK MODE":"LIGHT MODE"}
               </Button>
         
           </Box>
