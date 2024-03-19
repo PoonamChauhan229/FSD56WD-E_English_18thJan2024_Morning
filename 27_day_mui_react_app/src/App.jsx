@@ -15,12 +15,13 @@ import UseContextMainParent01 from './Components/UseContextMainParent01';
 import cartContext from './utilis_movie/cartContext';
 import MuiTest from './Components/MovieComponent/MuiTest'
 import TicTacToe from './Components/TicTacToe/TicTacToe';
+import {EditMovie} from './Components/MovieComponent/EditMovie'
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 function App() {
   // const [movieList,setMovieList]=useState(movie)
-  const [movieList,setMovieList]=useState([]) 
+  // const [movieList,setMovieList]=useState([]) 
   const [cartUCtxt,setcartUCtxt]=useState(0)
   // console.log(movie[2])
 
@@ -32,25 +33,7 @@ function App() {
     },
   });
 
-  // API CALL:
-  useEffect(()=>{
-    getMovies()
-  },[])
-
-  async function getMovies(){
-    const data=await fetch('https://65111d14829fa0248e3f850c.mockapi.io/movies')
-    const res=await data.json()
-    console.log(res)
-    setMovieList(res)
-  }
-  //empty dependancy
-  // []: not passed, render again and again
-  // []:pass ,  one call after the render
-  
-  //pass some dependancy
-  // [mode] > on mode change|| state change it will be called > useffect is dependant on mode
-    
-  return (
+    return (
     <ThemeProvider theme={theme}>
     <cartContext.Provider value={[cartUCtxt,setcartUCtxt]}>
     <div>  
@@ -61,11 +44,11 @@ function App() {
     <Navbar mode={mode} setMode={setMode}/>
 
      <Routes>
-      <Route path ='/' element={<MovieList movieList={movieList}/>}/>
+      <Route path ='/' element={<MovieList  />}/>
       {/* <Route path ='/' element={<MuiTest movieList={movieList}/>}/> */}
 
       <Route path='/addcolor' element={<AddColor/>}/>
-      <Route path='/addmovie' element={<AddMovie movieList={movieList} setMovieList={setMovieList} />}/>
+      <Route path='/addmovie' element={<AddMovie />}/>
        
       
       {/*       
@@ -88,10 +71,11 @@ function App() {
         */}
       {/* <Route path='*' element={<Navigate replace to='/404'/>}/> */}
 
-      <Route path='/movies/:id' element={<MovieDetails movieList={movieList}/>}/>
+      <Route path='/movies/:id' element={<MovieDetails/>}/>
       <Route path='/propdrilling' element={<MainParent01/>}/> 
       <Route path='/usecontext' element={<UseContextMainParent01/>}/> 
       <Route path='/tictactoe' element={<TicTacToe/>}/>
+      <Route path='/edit/:id' element={<EditMovie/>}/>
     </Routes>
      </div>
      </cartContext.Provider>

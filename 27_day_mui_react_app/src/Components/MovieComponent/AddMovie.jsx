@@ -4,7 +4,8 @@ import {useNavigate} from 'react-router-dom'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-const AddMovie = ({movieList,setMovieList}) => {
+const AddMovie = () => {
+ 
   const navigate=useNavigate()   
     const [moviePoster,setMoviePoster]=useState("")
     const [movieName,setMovieName]=useState("")

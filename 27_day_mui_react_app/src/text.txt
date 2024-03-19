@@ -13,3 +13,23 @@ npm install @mui/material @emotion/react @emotion/styled
 npm install @mui/icons-material
 
 
+// API CALL:
+  // useEffect(()=>{
+  //   getMovies()
+  // },[])
+
+  // async function getMovies(){
+  //   const data=await fetch('https://65111d14829fa0248e3f850c.mockapi.io/movies')
+  //   const res=await data.json()
+  //   console.log(res)
+  //   setMovieList(res)
+  // }
+  //empty dependancy
+  // []: not passed, render again and again
+  // []:pass ,  one call after the render
+  
+  //pass some dependancy
+  // [mode] > on mode change|| state change it will be called > useffect is dependant on mode
+    
+
+

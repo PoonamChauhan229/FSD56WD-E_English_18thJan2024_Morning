@@ -27,7 +27,7 @@ import { Counter } from './Counter';
 
 
 
-export default function MuiTest({name,poster,rating,summary,id}) {
+export default function MuiTest({name,poster,rating,summary,id,deleteButton,editButton}) {
 
   const datactxt=useContext(namingContext)
   const  [cartUCtxt,setcartUCtxt]=useContext(cartContext)
@@ -103,7 +103,11 @@ export default function MuiTest({name,poster,rating,summary,id}) {
             setctxtShow(false)
           }}>{show? <ExpandMoreIcon />:<ExpandLessIcon/>}           
         </IconButton>
+
+
+        {deleteButton}{editButton}
       </CardActions>
+
       {/* Summary */}
 
        
