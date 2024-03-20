@@ -65,6 +65,12 @@ function Navbar({mode,setMode}) {
                TicTacToe
               </Button>
 
+              <Button  sx={{ color: '#fff' }}   
+                onClick={()=>navigate('/formik')}     // route > component     
+              >
+               Formik
+              </Button>
+
               <Button  sx={{ color: '#fff' }}
               onClick={()=>{setMode(mode=="light"?"dark":"light")}}    
               >

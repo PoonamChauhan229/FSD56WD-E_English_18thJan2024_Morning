@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
 import './App.css'
 import { AddColor } from './Components/MovieComponent/AddColor';
 
@@ -13,9 +13,9 @@ import MovieDetails from './Components/MovieComponent/MovieDetails';
 import MainParent01 from './Components/PropDrilling/MainParent01';
 import UseContextMainParent01 from './Components/UseContextMainParent01';
 import cartContext from './utilis_movie/cartContext';
-import MuiTest from './Components/MovieComponent/MuiTest'
 import TicTacToe from './Components/TicTacToe/TicTacToe';
 import {EditMovie} from './Components/MovieComponent/EditMovie'
+import Formik from './Components/Formik/Formik'
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
@@ -76,6 +76,7 @@ function App() {
       <Route path='/usecontext' element={<UseContextMainParent01/>}/> 
       <Route path='/tictactoe' element={<TicTacToe/>}/>
       <Route path='/edit/:id' element={<EditMovie/>}/>
+      <Route path='/formik' element={<Formik/>}/>
     </Routes>
      </div>
      </cartContext.Provider>
