@@ -4,11 +4,19 @@ import IconButton from '@mui/material/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useEffect, useState } from 'react';
 import EditIcon from '@mui/icons-material/Edit';
+
+//Redux store
 import { useNavigate } from 'react-router-dom';
+import {useDispatch} from 'react-redux'
+import { addItem } from '../../utilis_reduxtoolkit/cartSlice';
+
+
 
 const MovieList = () => {
 const[movieList,setMovieList]=useState([])
 const navigate=useNavigate()
+
+const dispatch=useDispatch()
  
 useEffect(()=>{
   getMovies()
@@ -29,7 +37,15 @@ useEffect(()=>{
     getMovies()
     
   }
-  console.log()
+  
+  const handleAddItem=(movie)=>{
+    console.log(movie)
+    //click > displatch an action
+    // dispatch() > useDispatch()
+    dispatch(addItem(movie))
+  }
+
+
   return (
     <div style={{display:"flex", flexWrap:"wrap",gap:"2%"}}>      
     {
@@ -56,6 +72,12 @@ useEffect(()=>{
           <EditIcon/>
         </IconButton>
         }
+      
+      AddItem={
+        <button
+        onClick={()=>handleAddItem(element)}
+        >Add Item Store</button>
+      }
       
       
       

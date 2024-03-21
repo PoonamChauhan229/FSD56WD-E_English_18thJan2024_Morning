@@ -19,6 +19,11 @@ import Formik from './Components/Formik/Formik'
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
+// store
+import { Provider } from 'react-redux'
+import store from './utilis_reduxtoolkit/store';
+import Cart from './Components/MovieComponent/Cart';
+
 function App() {
   // const [movieList,setMovieList]=useState(movie)
   // const [movieList,setMovieList]=useState([]) 
@@ -34,53 +39,58 @@ function App() {
   });
 
     return (
-    <ThemeProvider theme={theme}>
-    <cartContext.Provider value={[cartUCtxt,setcartUCtxt]}>
-    <div>  
-   
-   
-    <br/>
+    <>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+      <cartContext.Provider value={[cartUCtxt,setcartUCtxt]}>
+      <div>  
     
-    <Navbar mode={mode} setMode={setMode}/>
-
-     <Routes>
-      <Route path ='/' element={<MovieList  />}/>
-      {/* <Route path ='/' element={<MuiTest movieList={movieList}/>}/> */}
-
-      <Route path='/addcolor' element={<AddColor/>}/>
-      <Route path='/addmovie' element={<AddMovie />}/>
-       
+    
+      <br/>
       
-      {/*       
-      Changed old url > new url
-      > old url > /newmovie
-      > new url > /addmovie 
-      
-      Navigate > react-router-dom
-      */}
-        <Route path='/newmovie' element={<Navigate replace to='/addmovie'/>}/>
+      <Navbar mode={mode} setMode={setMode}/>
 
-        {/* task 4:  */}
-        {/* <Route path='/404' element={<NotFound/>}/> */}
-        {/* "*" */}
+      <Routes>
+        <Route path ='/' element={<MovieList  />}/>
+        {/* <Route path ='/' element={<MuiTest movieList={movieList}/>}/> */}
 
-      {/* Navigation > 404 */}
-      {/* 
-        old path ='*'
-        new path ='/404'
+        <Route path='/addcolor' element={<AddColor/>}/>
+        <Route path='/addmovie' element={<AddMovie />}/>
+        
+        
+        {/*       
+        Changed old url > new url
+        > old url > /newmovie
+        > new url > /addmovie 
+        
+        Navigate > react-router-dom
         */}
-      {/* <Route path='*' element={<Navigate replace to='/404'/>}/> */}
+          <Route path='/newmovie' element={<Navigate replace to='/addmovie'/>}/>
 
-      <Route path='/movies/:id' element={<MovieDetails/>}/>
-      <Route path='/propdrilling' element={<MainParent01/>}/> 
-      <Route path='/usecontext' element={<UseContextMainParent01/>}/> 
-      <Route path='/tictactoe' element={<TicTacToe/>}/>
-      <Route path='/edit/:id' element={<EditMovie/>}/>
-      <Route path='/formik' element={<Formik/>}/>
-    </Routes>
-     </div>
-     </cartContext.Provider>
-     </ThemeProvider>
+          {/* task 4:  */}
+          {/* <Route path='/404' element={<NotFound/>}/> */}
+          {/* "*" */}
+
+        {/* Navigation > 404 */}
+        {/* 
+          old path ='*'
+          new path ='/404'
+          */}
+        {/* <Route path='*' element={<Navigate replace to='/404'/>}/> */}
+
+        <Route path='/movies/:id' element={<MovieDetails/>}/>
+        <Route path='/propdrilling' element={<MainParent01/>}/> 
+        <Route path='/usecontext' element={<UseContextMainParent01/>}/> 
+        <Route path='/tictactoe' element={<TicTacToe/>}/>
+        <Route path='/edit/:id' element={<EditMovie/>}/>
+        <Route path='/formik' element={<Formik/>}/>
+        <Route path='/cart' element={<Cart/>}/>
+      </Routes>
+      </div>
+      </cartContext.Provider>
+      </ThemeProvider>
+      </Provider>
+     </>
   )
 }
 

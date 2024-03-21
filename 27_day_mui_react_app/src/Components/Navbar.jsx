@@ -9,10 +9,16 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import cartContext from '../utilis_movie/cartContext';
 
+import { useSelector } from 'react-redux';
+
 
 function Navbar({mode,setMode}) {
     const navigate=useNavigate()
     const cartValUCtxt=useContext(cartContext)
+
+  const cartItems=useSelector((store)=>store.cart.items)
+  console.log(cartItems)
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -69,6 +75,12 @@ function Navbar({mode,setMode}) {
                 onClick={()=>navigate('/formik')}     // route > component     
               >
                Formik
+              </Button>
+
+              <Button  sx={{ color: '#fff' }}   
+                onClick={()=>navigate('/cart')}     // route > component     
+              >
+               ReduxCart-{cartItems.length}
               </Button>
 
               <Button  sx={{ color: '#fff' }}

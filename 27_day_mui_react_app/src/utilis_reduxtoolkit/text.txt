@@ -1,0 +1,4 @@
+> folder
+    > configure the store >provide to App.jsx
+        > configure slice > provide to store
+    
