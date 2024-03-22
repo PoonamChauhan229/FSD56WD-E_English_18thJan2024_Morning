@@ -1,0 +1,48 @@
+Sequence:
+Parent Constructor Called
+Parent Render Called
+Parent componentDidMount Called
+
+
+Child>>>>>>
+Parent Constructor Called
+Parent Render Called
+Child Constructor Called
+Child Render Called
+Child componentDidMount Called
+Parent componentDidMount Called
+
+Child 2>
+Parent Constructor Called
+Parent Render Called
+
+Child1 Constructor Called
+Child1 Render Called
+
+Child2 Constructor Called
+Child2 Render Called
+
+Child1 componentDidMount Called
+Child2 componentDidMount Called
+Parent componentDidMount Called
+
+
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+
+Parent Constructor Called
+Parent Render Called
+
+Child Constructor Called
+Child Render Called
+
+Child componentDidMount Called
+Parent componentDidMount Called
+
+Child Render Called
+Child componentDidUpdate Called
+
+
+
+
+

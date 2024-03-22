@@ -23,6 +23,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Provider } from 'react-redux'
 import store from './utilis_reduxtoolkit/store';
 import Cart from './Components/MovieComponent/Cart';
+import MainClass from './Components/ClassComponent/MainClass';
 
 function App() {
   // const [movieList,setMovieList]=useState(movie)
@@ -85,6 +86,7 @@ function App() {
         <Route path='/edit/:id' element={<EditMovie/>}/>
         <Route path='/formik' element={<Formik/>}/>
         <Route path='/cart' element={<Cart/>}/>
+        <Route path='/class' element={<MainClass/>}/>
       </Routes>
       </div>
       </cartContext.Provider>

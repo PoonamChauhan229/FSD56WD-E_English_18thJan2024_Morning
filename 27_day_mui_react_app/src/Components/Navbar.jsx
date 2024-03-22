@@ -83,6 +83,12 @@ function Navbar({mode,setMode}) {
                ReduxCart-{cartItems.length}
               </Button>
 
+              <Button  sx={{ color: '#fff' }}   
+                onClick={()=>navigate('/class')}     // route > component     
+              >
+               Class_Component
+              </Button>
+
               <Button  sx={{ color: '#fff' }}
               onClick={()=>{setMode(mode=="light"?"dark":"light")}}    
               >
