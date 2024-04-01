@@ -1,0 +1,196 @@
+MongoDb > Installation done
+SQL 
+    > Queries > Table Rows Cols 
+    > Structured Query languange
+    >Write Queries
+    
+    Ex: Tables
+        Employee 
+        BoxOffice
+        Building
+        Movies
+        Countries
+    >Rows > 1 record/row
+    >Cols
+
+
+NOSQL
+>  Not Only Structured Query languange
+DB>
+>  Collections
+    Employee 
+    BoxOffice
+    Building
+    Movies
+    Countries
+> 1 Document
+{}// JSON ||BSON data
+{"fname":"guvigeek","id":"1"}
+> 2 feild > 1 document
+    {"fname":"keerthana" "lname":"S","id":"2"}
+>2 field > 2 document
+
+MongoDB is a document database designed for ease of application development and scaling.
+https://www.mongodb.com/docs/manual/core/document/
+
+C:\Program Files\MongoDB\Server\7.0\bin
+    >cmd > mongod > start the Server
+    >cmd > mongosh
+
+    cmd > mongosh   
+
+        show dbs
+        // create a db
+        use dbname
+        >show collections
+        // No data found
+        
+        // create a collection
+        > create collection + insert atleast 1 document.
+        //
+        db.collectionName.insertOne({})
+        db.collectionName.insertMany([{},{},{}])
+
+
+        // 1 document
+        db.users.insertOne({"username":"Poonam","email":"poonam@gmail.com"})
+
+        db.users.insertMany([
+            {"username":"Bhavya","email":"bhavya@gmail.com"},
+            {"username":"Deepa","email":"deepa@gmail.com"},
+            {"username":"Harish","email":"harish@gmail.com"},
+            {"username":"Ravi","email":"ravi@gmail.com"},
+            {"username":"Komal","email":"komal@gmail.com"}
+        ])
+
+
+        // Now , if you want to find the inserted data
+        sql >    SELECT * from users
+        mongodb> db.collectionName.find()
+                db.users.find()
+                db.users.find().pretty()
+
+//retrive the data , which has username Komal.
+sql > SELECT * from users where username="Komal"
+mongodb> db.users.find({username:"Komal"})
+
+
+// movies json data 
+// u need a create collection > movies > insert all the data which is avaiable
+// 11:25 > 15 min 
+//
+
+db.movies.insertMany([
+  {
+    "name": "RRR",
+    "poster": "https://englishtribuneimages.blob.core.windows.net/gallary-content/2021/6/Desk/2021_6$largeimg_977224513.JPG",
+    "rating": 8.8,
+    "summary": "RRR is an upcoming Indian Telugu-language period action drama film directed by S. S. Rajamouli, and produced by D. V. V. Danayya of DVV Entertainments.",
+    "trailer": "https://www.youtube.com/embed/f_vbAtFSEc0",
+    "id": "1"
+  },
+  {
+    "name": "Iron man 2",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTM0MDgwNjMyMl5BMl5BanBnXkFtZTcwNTg3NzAzMw@@._V1_FMjpg_UX1000_.jpg",
+    "rating": 7,
+    "summary": "With the world now aware that he is Iron Man, billionaire inventor Tony Stark (Robert Downey Jr.) faces pressure from all sides to share his technology with the military. He is reluctant to divulge the secrets of his armored suit, fearing the information will fall into the wrong hands. With Pepper Potts (Gwyneth Paltrow) and Rhodes (Don Cheadle) by his side, Tony must forge new alliances and confront a powerful new enemy.",
+    "trailer": "https://www.youtube.com/embed/wKtcmiifycU",
+    "id": "2"
+  },
+  {
+    "name": "No Country for Old Men",
+    "poster": "https://upload.wikimedia.org/wikipedia/en/8/8b/No_Country_for_Old_Men_poster.jpg",
+    "rating": 8.1,
+    "summary": "A hunter's life takes a drastic turn when he discovers two million dollars while strolling through the aftermath of a drug deal. He is then pursued by a psychopathic killer who wants the money.",
+    "trailer": "https://www.youtube.com/embed/38A__WT3-o0",
+    "id": "3"
+  },
+  {
+    "name": "Jai Bhim",
+    "poster": "https://m.media-amazon.com/images/M/MV5BY2Y5ZWMwZDgtZDQxYy00Mjk0LThhY2YtMmU1MTRmMjVhMjRiXkEyXkFqcGdeQXVyMTI1NDEyNTM5._V1_FMjpg_UX1000_.jpg",
+    "summary": "A tribal woman and a righteous lawyer battle in court to unravel the mystery around the disappearance of her husband, who was picked up the police on a false case",
+    "rating": 8.8,
+    "trailer": "https://www.youtube.com/embed/nnXpbTFrqXA",
+    "id": "4"
+  },
+  {
+    "name": "The Avengers",
+    "rating": 8,
+    "summary": "Marvel's The Avengers (classified under the name Marvel Avengers\n Assemble in the United Kingdom and Ireland), or simply The Avengers, is\n a 2012 American superhero film based on the Marvel Comics superhero team\n of the same name.",
+    "poster": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/avengersendgame_lob_crd_05.jpg",
+    "trailer": "https://www.youtube.com/embed/eOrNdBpGMv8",
+    "id": "5"
+  },
+  {
+    "name": "Interstellar",
+    "poster": "https://m.media-amazon.com/images/I/A1JVqNMI7UL._SL1500_.jpg",
+    "rating": "8",
+    "summary": "When Earth becomes uninhabitable in the future, a farmer and ex-NASA\n pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team\n of researchers, to find a new planet for humans.",
+    "trailer": "https://www.youtube.com/embed/zSWdZVtXT7E",
+    "id": "6"
+  },
+  {
+    "name": "Baahubali",
+    "poster": "https://flxt.tmsimg.com/assets/p11546593_p_v10_af.jpg",
+    "rating": 8,
+    "summary": "In the kingdom of Mahishmati, Shivudu falls in love with a young warrior woman. While trying to woo her, he learns about the conflict-ridden past of his family and his true legacy.",
+    "trailer": "https://www.youtube.com/embed/sOEg_YZQsTI",
+    "id": "7"
+  },
+  {
+    "name": "Ratatouille",
+    "poster": "https://resizing.flixster.com/gL_JpWcD7sNHNYSwI1ff069Yyug=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzc4ZmJhZjZiLTEzNWMtNDIwOC1hYzU1LTgwZjE3ZjQzNTdiNy5qcGc=",
+    "rating": 8,
+    "summary": "Remy, a rat, aspires to become a renowned French chef. However, he fails to realise that people despise rodents and will never enjoy a meal cooked by him.",
+    "trailer": "https://www.youtube.com/embed/NgsQ8mVkN8w",
+    "id": "8"
+  },
+  {
+    "name": "Pathan10000",
+    "poster": " https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwhoYoIBLCR8rK_9eJQogQY4uby-tNweYixav3UloGH-J6UjMxSLkLbXvETNB-87a5NXK12shNuTJSnTwo_mygCfukoXI7BvMfGfLeJTCYkTixXn7zllcci7YfnvgkX28eROUl-Fc5L9oAANr4_G5XC1li99Kz_mQlGZbfozPvoaY2-okZ4LBXkI24/s16000/Pathaan-Movie-3.jpg",
+    "rating": "1000",
+    "summary": " “Pathan” is a highly-anticipated Bollywood action thriller film starring Shah Rukh Khan in the lead role. A film is directed by Siddharth Anand and also stars Deepika Padukone and John Abraham…",
+    "trailer": " https://www.youtube.com/embed/nDHsBUbivz8",
+    "id": "9"
+  },
+  
+])
+
+// retrive
+1-includes >7,8.6,8.1
+db.movies.find({rating:{$in:[7,8.6,8.1]}})
+({rating:{$in:[78,89,90]}})
+
+2-not includes
+db.movies.find({rating:{$nin:[7,8.6,8.1]}})
+
+3-just want name who has rating [7,8.6,8.1]
+db.movies.find({rating:{$in:[7,8.6,8.1]}},{name:1,rating:1,_id:0})
+
+4-all the ratings to be sorted
+db.movies.find({},{rating:1,_id:0}).sort({rating:1})// sort in asc
+db.movies.find({},{rating:1,_id:0}).sort({rating:1})// sort in desc
+sql > order by col asc/desc
+
+db.movies.find({},{summary:0,poster:0,_id:0}).sort({rating:-1})
+
+//_id > 
+// unique identifier
+//each document
+
+$gt  > greater than
+$gte > greater than equal to 
+$lt  > less than
+$lte > less than equal to 
+$eq  > equal to 
+$neq > not equal to 
+$in  > includes
+$nin > not includes
+
+
+
+
+
+
+
+
