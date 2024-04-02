@@ -183,14 +183,162 @@ $gte > greater than equal to
 $lt  > less than
 $lte > less than equal to 
 $eq  > equal to 
-$neq > not equal to 
+$ne > not equal to 
 $in  > includes
 $nin > not includes
 
+insertOne({})
+insertMany([])
+sort()
+// find the , we want specific feild
 
 
 
+>Start up mongodb server?
+> 2 cmd 
+>mongod > start up the server
+>mongosh > queries 
+  > show dbs
+  > use db
+  > show collections
+  > db.movies.find()
+
+>$in [7,8.6,8.1]
+db.movies.find({rating:{
+  $in:[7,8.6,8.1]
+}})
+
+find the those movies who has rating greater than 8?
+db.movies.find({rating:{
+  $gt:8
+}})
+
+> gte 8
+db.movies.find({rating:{
+  $gte:8
+}})
+
+> lt 8
+> lte 8
+db.movies.find({rating:{
+  "$lt":8
+}})
+
+db.movies.find({rating:{
+  "$lte":8
+}})
+
+"$eq"  > equal to  8
+"$ne" > not equal to 8
+
+db.movies.find({rating:{
+  "$eq":8
+}})
+
+db.movies.find({rating:{
+  "$ne":8
+}})
+
+"$nin" :[7,8.6,8.1]
+
+db.movies.find({rating:{
+  "$nin":[7,8.6,8.1]
+}})
+
+insertOne({})
+
+
+The aggregation pipeline consists of stages and each stage transforms the document. Or in other words, the aggregation pipeline is a multi-stage pipeline, so in each state, the documents taken as input and produce the resultant set of documents now in the next stage(id available) the resultant documents taken as input and produce output, this process is going on till the last stage. The basic pipeline stages provide filters that will perform like queries and the document transformation modifies the resultant document and the other pipeline provides tools for grouping and sorting documents. You can also use the aggregation pipeline in sharded collection.
 
 
 
+Stages: Each stage starts from stage operators which are:
 
+$match: It is used for filtering the documents can reduce the amount of documents that are given as input to the next stage.
+$project: It is used to select some specific fields from a collection.
+$group: It is used to group documents based on some value.
+$sort: It is used to sort the document that is rearranging them
+$skip: It is used to skip n number of documents and passes the remaining documents
+$limit: It is used to pass first n number of documents thus limiting them.
+$unwind: It is used to unwind documents that are using arrays i.e. it deconstructs an array field in the documents to return documents for each element.
+$out: It is used to write resulting documents to a new collection
+Expressions: It refers to the name of the field in input documents for e.g. { $group : { _id : “$id“, total:{$sum:”$fare“}}} here $id and $fare are expressions.
+
+Accumulators: These are basically used in the group stage
+
+sum: It sums numeric values for the documents in each group
+count: It counts total numbers of documents
+avg: It calculates the average of all given values from all documents
+min: It gets the minimum value from all the documents
+max: It gets the maximum value from all the documents
+first: It gets the first document from the grouping
+last:It gets the last document from the grouping
+
+Note:
+
+in $group _id is Mandatory field
+$out must be the last stage in the pipeline
+$sum:1 will count the number of documents and $sum:”$fare” will give the sum of total fare generated per id.
+
+
+db.students.insertMany([
+            {"username":"Bhavya","email":"bhavya@gmail.com","age":24},
+            {"username":"Deepa","email":"deepa@gmail.com","age":29},
+            {"username":"Harish","email":"harish@gmail.com","age":25},
+            {"username":"Ravi","email":"ravi@gmail.com","age":23},
+            {"username":"Komal","email":"komal@gmail.com","age":26},
+            {"username":"Aditya","email":"aditya@gmail.com","age":24},
+            {"username":"Akhiesh","email":"akhilesh@gmail.com","age":21},
+            {"username":"Haritha","email":"haritha@gmail.com","age":26},
+            {"username":"Shwetha","email":"shwetha@gmail.com","age":25},
+            {"username":"Rekha","email":"rekha@gmail.com","age":20}
+        ])
+db.students.find({"username":"Bhavya"})
+find({condition/critiea},{projection> what to includes/not includes})
+
+$match:
+
+db.students.aggregate([
+  {$match:{"username":"Bhavya"}}
+])
+
+db.students.aggregate([
+  {$match:{"email":"harish@gmail.com"}}
+])
+
+>Shwetha
+
+// match + gte
+db.students.aggregate([
+  {$match:{age:{"$gte":25}}}
+])
+
+// match +lte 25
+
+// math +ne 20
+db.students.aggregate([
+  {$match:{age:{"$ne":20}}}
+])
+
+//project
+db.students.aggregate([
+  {$project:{username:0,age:0,_id:0}}
+])
+
+db.students.aggregate([
+  {$project:{username:1,age:1,_id:0}}
+])
+
+$sort: It is used to sort the document that is rearranging them
+$limit: It is used to pass first n number of documents thus limiting them.
+
+age > asc > limit
+db.students.aggregate([
+  {$sort:{age:1}},
+  {$limit:4}
+])
+
+//enter 6 username with similar name
+//match > name > "Mukesh"
+//sort asc/desc
+/limit 5
