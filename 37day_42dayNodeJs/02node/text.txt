@@ -1,0 +1,35 @@
+entry point:
+index.js
+main.js
+app.js
+server.js
+
+// app.com
+// ||about page
+// app.com/about
+// ||home page
+// app.com/home
+
+//app.com > root route
+// /abc
+// /about
+// /home  > routes 
+
+//setup route
+// app.get()
+// routes
+//function > (req,res)
+
+
+// /weather
+// weather > location >Boston
+
+// /weather 
+// ?location="Boston"&appid=""
+// ?apikey=""
+
+//?rating=5
+//?search="comedymovies"&rating=5&limit=2
+
+
+// req.query

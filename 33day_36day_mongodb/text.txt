@@ -273,6 +273,7 @@ min: It gets the minimum value from all the documents
 max: It gets the maximum value from all the documents
 first: It gets the first document from the grouping
 last:It gets the last document from the grouping
+muliply:
 
 Note:
 
@@ -342,3 +343,108 @@ db.students.aggregate([
 //match > name > "Mukesh"
 //sort asc/desc
 /limit 5
+
+//orders > products
+db.orders.insertMany([
+  { _id: 0, "productName": "Steel beam", "status": "new", "quantity": 10 },
+  { _id: 1, "productName": "Steel beam", "status": "urgent", "quantity": 20 },
+  { _id: 2, "productName": "Steel beam", "status": "urgent", "quantity": 30 },
+  { _id: 3, "productName": "Iron rod", "status": "new", "quantity": 15 },
+  { _id: 4, "productName": "Iron rod", "status": "urgent", "quantity": 50 },
+  { _id: 5, "productName": "Iron rod", "status": "urgent", "quantity": 10 }
+])
+
+SB>10+20+30 >60  +++ 20+30 >50
+IR>15+50+10 >75  +++ 50+10 >60
+
+db.orders.aggregate([
+  {$match:{status:"urgent"}}
+])
+
+$group: It is used to group documents based on some value.
+
+
+db.orders.aggregate([
+ {$group:{_id:"$productName"}}
+])
+
+db.orders.aggregate([
+ {$group:{_id:"$status"}}
+])
+
+Accumulators: These are basically used in the group stage
+
+sum: It sums numeric values for the documents in each group
+
+db.orders.aggregate([ 
+   {$group:{_id:"$productName",totalQuantity:{"$sum":"$quantity"}}}
+])
+// 75 60
+
+db.orders.aggregate([ 
+   {$match:{status:"urgent"}},
+   {$group:{_id:"$productName",totalUrgentQuantity:{"$sum":"$quantity"}}}
+])
+// 50 60
+
+//products -> sales 
+db.products.insertMany(
+  [
+    { "_id": 1, "product": "phones", "quantity": 15, "price": 10000,"status": "new", },
+    { "_id": 2, "product": "Laptop", "quantity": 12, "price": 15000,"status": "new", },
+    { "_id": 3, "product": "phones", "quantity": 13, "price": 12000,"status": "new", },
+    { "_id": 4, "product": "Tablet", "quantity": 16, "price": 8000,"status": "urgent"},
+    { "_id": 5, "product": "Laptop", "quantity": 14, "price": 14000,"status": "urgent"},
+    { "_id": 6, "product": "phones", "quantity": 12, "price": 11000,"status": "urgent"},
+    { "_id": 7, "product": "Tablet", "quantity": 16, "price": 8000,"status": "urgent"}
+])
+
+// give total quantity sold out wrt products
+db.products.aggregate([
+  {$group:{_id:"$product",totalQuatitySold:{"$sum":"$quantity"}}}
+])
+
+//// give total quantity sold out wrt products+ avg Price
+db.products.aggregate([
+  {$group:{_id:"$product",totalQuatitySold:{"$sum":"$quantity"},averagePrice:{"$avg":"$price"}}}
+])
+
+//Total Sales 
+
+db.products.aggregate([
+  {
+    $group:{_id:"$product",
+    totalQuatitySold:{"$sum":"$quantity"},
+    averagePrice:{"$avg":"$price"},
+    totalSales:{"$sum":{"$multiply":["$price","$quantity"]}}   
+    }}
+])
+
+
+npm init -y  > Initiliaze the project > YES 
+> package.json 
+
+npm i mongodb
+  > nodemodules + package lock.json
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

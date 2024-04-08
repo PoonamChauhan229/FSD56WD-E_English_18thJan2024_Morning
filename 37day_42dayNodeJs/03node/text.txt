@@ -1,0 +1,5 @@
+npm i mongoose
+connection with DB
+Define the schema
+create an instance
+save to DB

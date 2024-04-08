@@ -1,0 +1,43 @@
+NODEJS
+>nodejs
+
+Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!
+
+node -v
+> check the version
+
+MERN STACK
+MONGODB EXPRESS REACT NODEJS
+
+Client >REACT
+Server >EXPRESS => NODEJS
+DB     >MONGODB
+
+POPULAR STACK
+MERN:MONGODB EXPRESS REACT NODEJS
+MEAN:MONGODB EXPRESS ANGULAR NODEJS
+MEVN:MONGODB EXPRESS VUE NODEJS
+LAMP:LINUX APACHE MYSQL PHP
+
+NODEJS is a way to run JS on the Server
+Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser.
+NODEJS is not a programming language
+
+
+// NODEJS
+// > JS
+
+NPM ? NODE PACKAGE MANAGER
+    > Allows devlopers to install manage use => various packages in thier packages
+
+
+In built
+ > default packages > essential for nodejs application > comes up core modules
+
+Third party
+ > install seperately express, axios ....etc
+
+Custom packages:
+    > for that if any req, devlopers themselves will create it.
+
+NODE MODULE SYSTEM:
