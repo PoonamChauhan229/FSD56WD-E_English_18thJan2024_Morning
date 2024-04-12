@@ -1,0 +1,20 @@
+Password:
+bycryptjs
+
+
+SIGNIN JWT
+
+
+// Authentication
+// user relationship model
+// db> cloud > mongodb atlas
+
+
+>owner
+>userSchema.virtual('taskRel',{
+    ref:'Task',
+    localField:"_id",// user_id 
+    foreignField:"owner"
+})
+
+
